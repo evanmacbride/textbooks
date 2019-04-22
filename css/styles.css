@@ -244,14 +244,15 @@ input[type=submit]:hover {
 	width: 9%;
 }
 
-.recent-textbook * {
+.recent-textbook *, .recent-textbook-header * {
 	overflow: hidden;
 	white-space: nowrap;
+	margin-right: 4px;
 }
 
 .recent-textbooks, .recent-textbook-header {
 	/*width: 550px;*/
-	width: 1200px;
+	width: 1180px;
 }
 
 @media screen and (max-width: 620px) {
