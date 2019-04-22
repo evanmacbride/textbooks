@@ -1,0 +1,53 @@
+<header class="banner">
+	<h1>Textbook Database</h1>
+	<input type="button" value="Log Out" id="logout" name="logout">
+</header>	
+<main role="main">
+	<section class="edit-textbooks">
+		<section class="textbook-entry">
+			<h2>Enter New Textbook</h2>
+			<form class="new-textbooks">
+				<div class="new-param param">					
+					<label for="new-course">Course</label>
+					<input type="number" min="1" max="999" name="course" step="1" id="new-course">
+				</div>
+				<div class="new-param param">					
+					<label for="new-semester">Semester</label>
+					<input type="number" min="0" max="999999" name="semester" step="1" id="new-semester">
+				</div>
+				<div class="new-param param">					
+					<label for="new-lead">Lead</label>
+					<input type="text" name="lead" id="new-lead">
+				</div>
+				<div class="new-param param">
+					<label for="new-title">Title</label>
+					<input type="text" name="textbook-title" id="new-title">
+				</div>
+				<div class="new-param param">
+					<label for="new-author">Author</label>
+					<input type="text" name="textbook-author" id="new-author">
+				</div>				
+				<div class="new-param param">
+					<label for="new-ISBN">ISBN</label>
+					<input type="number" min="1" max="99999999999999" name="ISBN" id="new-ISBN">
+				</div>
+
+				<input type="submit" value="Submit" id="submit-new" name="submit">
+			</form>
+		</section>
+		<section class="textbook-display">
+			<h2>Recent Textbooks</h2>
+			<header class="recent-textbook-header">
+				<span class="textbook-course">Course</span>
+				<span class="textbook-semester">Semester</span>
+				<span class="textbook-lead">Lead</span>
+				<span class="textbook-title">Title</span>
+				<span class="textbook-author">Author</span>
+				<span class="textbook-isbn">ISBN</span>
+				<span class="textbook-func"></span>
+			</header>
+			<ul class="recent-textbooks">
+			</ul>
+		</section>
+	</section>
+</main>

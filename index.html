@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Textbook Database Log In</title>
+    <meta name="titleription" content="A textbook management system for college courses. Produced by Evan MacBride for CSC264.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="css/normalize.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700" rel="stylesheet"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+    <div class="wrap">
+		<header class="banner">
+			<h1>Textbook Database</h1>
+		</header>
+
+        <main role="main">
+			<section class="login-entry">
+				<h2>Log In</h2>
+				<form class="login-form">
+					<div class="param">
+						<label for="username">Username</label>
+						<input type="text" name="username" id="username">
+					</div>
+					<div class="param">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password">
+					</div>
+					<input type="submit" value="Submit" id="submit-login" name="submit">
+				</form>
+				<p class="login-message"></p>
+			</section>
+        </main>
+		
+    </div>
+	
+	<footer role="contentinfo">
+		<p>Copyright &copy; 2019 <a href="mailto:emacbrid@dtcc.edu">Evan MacBride</a></p>
+	</footer>
+</body>
+	
+</html>
