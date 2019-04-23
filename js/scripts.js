@@ -40,7 +40,7 @@ $(document).ready(function() {
 					doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
 					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
 					doc.data().isbn + "'></input><span class='textbook-func'>" +
-					"<button type='button' class='save-edit hideable hidden-btn' title='save edit'>" +
+					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
 					"<i class='far fa-save'></i></button>" +					
 					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
 					"<i class='fas fa-undo-alt'></i></button>" +					
@@ -81,7 +81,7 @@ $(document).ready(function() {
 	});
 	
 	// Edit textbooks "in place" (as they appear in search table) by
-	// removing that line's disabled attribute. Use the edit button
+	// removing that line's disabled attribute. Use the edit button to
 	// toggle between disabled and enabled. Clicking edit reveals icons
 	// for save-edit and undo-edit.
 	$(".wrap").on("click", ".recent-textbooks li .edit-textbook", function() {
@@ -100,6 +100,39 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	// Save edits in place by clicking save-edit icon.
+	$(".wrap").on("submit", ".edit-form", function(event) {
+		event.preventDefault();
+		//var d = new Date();
+		//var $date = d.toISOString();
+		var $course = $("#new-course").val();
+		var $semester = $("#new-semester").val();
+		var $lead = $("#new-lead").val();
+		var $title = $("#new-title").val();
+		var $author = $("#new-author").val();
+		var $ISBN = $("#new-ISBN").val();
+
+		// TODO: Get id of relevant doc.
+		db.collection("textbooks").doc($deletingBtn.attr("id")).update({
+			//date: $date,
+			course: $course,
+			semester: $semester,
+			lead: $lead,
+			title: $title,
+			author: $author,
+			isbn: $ISBN
+		})
+		.then(function(docRef) {
+			console.log("Document written with ID: ", docRef.id);
+		})
+		.catch(function(error) {
+			console.error("Error adding document: ", error);
+		});
+
+		//displayRecent();
+		//$(this)[0].reset();
+	});	
 
 	// Delete textbooks from database and remove them from recent-textbooks.
 	$(".wrap").on("click", ".recent-textbooks li .delete-textbook", function() {
@@ -113,7 +146,6 @@ $(document).ready(function() {
 	});
 
 	// Load new textbooks into database from new-textbooks form.
-	// TODO: Collect additional data (author, lead and course).
 	$(".wrap").on("submit", ".new-textbooks", function(event) {
 		event.preventDefault();
 		//var d = new Date();
