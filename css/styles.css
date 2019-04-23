@@ -227,10 +227,6 @@ input[type=submit]:hover {
 	font-weight: 500;
 }
 
-.recent-textbook form {
-	
-}
-
 .textbook-course {
 	width: 6%;
 }
@@ -326,7 +322,7 @@ input[type=submit]:hover {
 }
 
 /* Undo and save default to hidden. */
-.undo-edit, .save-edit {
+.hidden-btn {
 	display: none;
 }
 

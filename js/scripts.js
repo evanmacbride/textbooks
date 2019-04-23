@@ -34,15 +34,15 @@ $(document).ready(function() {
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
 					$recentHtml + "<li class='recent-textbook'><form class='edit-form'><input disabled class='textbook-course' value='" + 
-					doc.data().course + "'></input><span class='textbook-semester'>" + 
-					doc.data().semester + "</span><span class='textbook-lead'>" + 
-					doc.data().lead + "</span><span class='textbook-title'>" +
-					doc.data().title + "</span><span class='textbook-author'>" +
-					doc.data().author + "</span><span class='textbook-isbn'>" + 
-					doc.data().isbn + "</span><span class='textbook-func'>" +
-					"<button type='button' class='save-edit' title='save edit'>" +
+					doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
+					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
+					doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
+					doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
+					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+					doc.data().isbn + "'></input><span class='textbook-func'>" +
+					"<button type='button' class='save-edit hideable hidden-btn' title='save edit'>" +
 					"<i class='far fa-save'></i></button>" +					
-					"<button type='button' class='undo-edit' title='undo edit'>" +
+					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
 					"<i class='fas fa-undo-alt'></i></button>" +					
 					"<button type='button' class='edit-textbook' title='edit textbook'>" +
 					"<i class='far fa-edit'></i></button>" +
@@ -79,12 +79,33 @@ $(document).ready(function() {
 		});
 		$(this)[0].reset();
 	});
+	
+	// Edit textbooks "in place" (as they appear in search table) by
+	// removing that line's disabled attribute. Use the edit button
+	// toggle between disabled and enabled. Clicking edit reveals icons
+	// for save-edit and undo-edit.
+	$(".wrap").on("click", ".recent-textbooks li .edit-textbook", function() {
+		var $editingBtn = $(this);
+		var $thisBookParams = $(this).closest("form").children("input");
+		$thisBookParams.prop("disabled", function(i, v) {
+			return !v;
+		});
+		$(this).siblings().each(function() {
+			if ($(this).hasClass("hidden-btn")) {
+				$(this).removeClass("hidden-btn");
+			} else {
+				if ($(this).hasClass("hideable")) {
+					$(this).addClass("hidden-btn");
+				}
+			}
+		});
+	});
 
 	// Delete textbooks from database and remove them from recent-textbooks.
-	$(".wrap").on("click", ".recent-textbooks li button", function() {
+	$(".wrap").on("click", ".recent-textbooks li .delete-textbook", function() {
 		var $deletingBtn = $(this);
 		db.collection("textbooks").doc($deletingBtn.attr("id")).delete().then(function() {
-			$deletingBtn.parent().parent().remove();
+			$deletingBtn.parent().parent().parent().remove();
 			console.log("Document successfully deleted!");
 		}).catch(function(error) {
 			console.error("Error removing document: ", error);
