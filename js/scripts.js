@@ -33,17 +33,21 @@ $(document).ready(function() {
 				var $recentHtml = $(".recent-textbooks").html();
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
-					$recentHtml + "<li class='recent-textbook'><span class='textbook-course'>" + 
-					doc.data().course + "</span><span class='textbook-semester'>" + 
+					$recentHtml + "<li class='recent-textbook'><form class='edit-form'><input disabled class='textbook-course' value='" + 
+					doc.data().course + "'></input><span class='textbook-semester'>" + 
 					doc.data().semester + "</span><span class='textbook-lead'>" + 
 					doc.data().lead + "</span><span class='textbook-title'>" +
 					doc.data().title + "</span><span class='textbook-author'>" +
 					doc.data().author + "</span><span class='textbook-isbn'>" + 
 					doc.data().isbn + "</span><span class='textbook-func'>" +
-					"<button type='button' class='edit-textbook' id='" +
-					$textbookId + "'title='edit textbook'><i class='far fa-edit'></i></button></span>" +
+					"<button type='button' class='save-edit' 'title='save edit'>" +
+					"<i class='far fa-save'></i></button>" +					
+					"<button type='button' class='undo-edit' 'title='undo edit'>" +
+					"<i class='fas fa-undo-alt'></i></button>" +					
+					"<button type='button' class='edit-textbook' 'title='edit textbook'>" +
+					"<i class='far fa-edit'></i></button>" +
 					"<button type='button' class='delete-textbook' id='" + 
-					$textbookId + "'title='delete textbook'><i class='far fa-trash-alt'></i></button></span></li>");
+					$textbookId + "'title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
 			});
 		});
 	}

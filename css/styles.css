@@ -192,13 +192,20 @@ input[type=submit]:hover {
 	background-color: var(--whitegrey);
 }
 
-.recent-textbook, .recent-textbook-header {
+.recent-textbook .edit-form, .recent-textbook-header {
 	padding: 8px 6px;	
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.recent-textbook .edit-form input {
+	background-color: inherit !important;
+	color: inherit !important;
+	border: none;
+	box-sizing: border-box;
 }
 
 .textbook-display h2 {
@@ -218,6 +225,10 @@ input[type=submit]:hover {
 
 .recent-textbooks {
 	font-weight: 500;
+}
+
+.recent-textbook form {
+	
 }
 
 .textbook-course {
@@ -289,13 +300,19 @@ input[type=submit]:hover {
 	border-radius: 0 0 10px 10px;
 }
 
-.delete-textbook, .edit-textbook {
-	display: flex;
+.textbook-func {
+	text-align: right;
+}
+
+.delete-textbook, .edit-textbook, .undo-edit, .save-edit {
+	margin: 0;
+	padding: 0 3px;
+	display: inline-block;
+	/*display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
-	float: right;
-	/*margin-left: auto;
+	margin-left: auto;
 	background-color: var(--red);
 	width: 20px;
 	border-radius: 10px;*/
@@ -306,6 +323,11 @@ input[type=submit]:hover {
 	outline-color: transparent;
 	transition: color 0.15s;
 	cursor: pointer;
+}
+
+/* Undo and save default to hidden. */
+.undo-edit, .save-edit {
+	display: none;
 }
 
 .edit-textbook:hover {
