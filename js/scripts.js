@@ -39,7 +39,10 @@ $(document).ready(function() {
 					doc.data().lead + "</span><span class='textbook-title'>" +
 					doc.data().title + "</span><span class='textbook-author'>" +
 					doc.data().author + "</span><span class='textbook-isbn'>" + 
-					doc.data().isbn + "</span><span class='textbook-func'><button type='button' class='delete-textbook' id='" + 
+					doc.data().isbn + "</span><span class='textbook-func'>" +
+					"<button type='button' class='edit-textbook' id='" +
+					$textbookId + "'title='edit textbook'><i class='far fa-edit'></i></button></span>" +
+					"<button type='button' class='delete-textbook' id='" + 
 					$textbookId + "'title='delete textbook'><i class='far fa-trash-alt'></i></button></span></li>");
 			});
 		});
