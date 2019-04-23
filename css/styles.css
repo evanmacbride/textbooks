@@ -295,10 +295,11 @@ input[type=submit]:hover {
 	justify-content: center;
 	align-items: center;
 	float: right;
-	margin-left: auto;
+	/*margin-left: auto;
 	background-color: var(--red);
 	width: 20px;
-	border-radius: 10px;
+	border-radius: 10px;*/
+	background-color: transparent;
 	color: var(--blackgrey);
 	font-weight: 700;
 	border: 0;
@@ -309,7 +310,7 @@ input[type=submit]:hover {
 
 .delete-textbook:hover {
 	opacity: 1;
-	color: var(--offwhite);
+	color: var(--red);
 }
 
 footer {

@@ -40,7 +40,7 @@ $(document).ready(function() {
 					doc.data().title + "</span><span class='textbook-author'>" +
 					doc.data().author + "</span><span class='textbook-isbn'>" + 
 					doc.data().isbn + "</span><span class='textbook-func'><button type='button' class='delete-textbook' id='" + 
-					$textbookId + "'title='delete textbook'>&times</button></span></li>");
+					$textbookId + "'title='delete textbook'><i class='far fa-trash-alt'></i></button></span></li>");
 			});
 		});
 	}
