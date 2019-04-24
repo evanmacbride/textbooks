@@ -204,14 +204,7 @@ input[type=submit] {
 	width: 0;
 }
 
-.checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 1rem;
-	width: 1rem;
-	background-color: blue;
-}
+
 
 #strict-search:checked ~ .checkmark:after {
 	display: block;
@@ -229,6 +222,58 @@ input[type=submit] {
 	border-width: 0 3px 3px 0;
 	transform: rotate(45deg);	
 }*/
+
+.check-container {
+	position: relative;
+	display: inline-block;
+	width: 1.25rem;
+	height: 1.25rem;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+#strict-search {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	box-sizing: border-box;
+}
+
+input:checked + .checkmark {
+	opacity: 1;
+	background-color: var(--midgrey);
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+input:checked + .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--blackgrey);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--lightgrey);
+	border: 1px solid var(--blackgrey);
+}
 
 #logout {
 	float: right;
