@@ -45,9 +45,14 @@ $(document).ready(function() {
 		});
 	}
 	
-	function displaySearchResults(queryField, queryValue) {
+	// Display Search Results. If exact match is requested, omit orderBy().
+	function displaySearchResults(queryField, matchType, queryValue) {
 		$(".recent-textbooks").html("");
-		db.collection("textbooks").where(queryField, ">=", queryValue).orderBy(queryField)
+		var order = db.collection("textbooks").where(queryField, matchType, queryValue).orderBy(queryField);
+		if (matchType == "==") {
+			order = db.collection("textbooks").where(queryField, matchType, queryValue);
+		}
+		order
 			.get().then((querySnapshot) => {
 			querySnapshot.forEach((doc) => {
 				var $recentHtml = $(".recent-textbooks").html();
@@ -74,11 +79,16 @@ $(document).ready(function() {
 		});		
 	}
 	
+	// Search for desired database field. Check if exact match requested.
 	$(".wrap").on("submit", ".search-textbooks",function(event) {
 		event.preventDefault();
 		var $queryValue = $(this).find("#search-query").val();
 		var $queryType = $(this).find("#query-type").val();
-		displaySearchResults($queryType,$queryValue);
+		var matchType = ">=";
+		if ($(this).find("#strict-search").is(":checked")) {
+			matchType = "==";
+		}
+		displaySearchResults($queryType,matchType,$queryValue);
 	});
 
 	
