@@ -33,7 +33,8 @@ $(document).ready(function() {
 				var $recentHtml = $(".recent-textbooks").html();
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
-					$recentHtml + "<li class='recent-textbook'><form class='edit-form'><input disabled class='textbook-course' value='" + 
+					$recentHtml + "<li class='recent-textbook' data-id='" + 
+					$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
 					doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
 					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
 					doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
@@ -104,35 +105,35 @@ $(document).ready(function() {
 	// Save edits in place by clicking save-edit icon.
 	$(".wrap").on("submit", ".edit-form", function(event) {
 		event.preventDefault();
-		//var d = new Date();
-		//var $date = d.toISOString();
-		var $course = $("#new-course").val();
-		var $semester = $("#new-semester").val();
-		var $lead = $("#new-lead").val();
-		var $title = $("#new-title").val();
-		var $author = $("#new-author").val();
-		var $ISBN = $("#new-ISBN").val();
-
+		console.log($(this).find(".textbook-course").val());
+		var $course = $(this).find(".textbook-course").val();
+		var $semester = $(this).find(".textbook-semester").val();
+		var $lead = $(this).find(".textbook-lead").val();
+		var $title = $(this).find(".textbook-title").val();
+		var $author = $(this).find(".textbook-author").val();
+		var $ISBN = $(this).find(".textbook-isbn").val();
+		var $thisDoc = $(this).parent().attr("data-id");
 		// TODO: Get id of relevant doc.
-		db.collection("textbooks").doc($deletingBtn.attr("id")).update({
-			//date: $date,
-			course: $course,
-			semester: $semester,
-			lead: $lead,
-			title: $title,
-			author: $author,
-			isbn: $ISBN
-		})
-		.then(function(docRef) {
-			console.log("Document written with ID: ", docRef.id);
-		})
-		.catch(function(error) {
-			console.error("Error adding document: ", error);
+		var docRef = db.collection("textbooks").doc($thisDoc);
+		docRef.get().then(function(thisDoc) {
+			if (thisDoc.exists) {
+				docRef.update({
+				course: $course,
+				semester: $semester,
+				lead: $lead,
+				title: $title,
+				author: $author,
+				isbn: $ISBN		
+			})
+			/*.then(function(docRef) {
+				console.log("Document updated with ID: ", docRef.id);
+			})*/
+			.catch(function(error) {
+				console.error("Error updating document: ", error);
+			});
+			}
 		});
-
-		//displayRecent();
-		//$(this)[0].reset();
-	});	
+	});
 
 	// Delete textbooks from database and remove them from recent-textbooks.
 	$(".wrap").on("click", ".recent-textbooks li .delete-textbook", function() {
