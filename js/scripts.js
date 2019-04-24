@@ -105,7 +105,6 @@ $(document).ready(function() {
 	// Save edits in place by clicking save-edit icon.
 	$(".wrap").on("submit", ".edit-form", function(event) {
 		event.preventDefault();
-		console.log($(this).find(".textbook-course").val());
 		var $course = $(this).find(".textbook-course").val();
 		var $semester = $(this).find(".textbook-semester").val();
 		var $lead = $(this).find(".textbook-lead").val();

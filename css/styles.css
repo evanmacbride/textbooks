@@ -95,9 +95,15 @@ a:hover {
 	text-decoration: underline;
 }
 
+
 .param label {
 	font-family: 'IBM Plex Mono';
 	font-weight: 700;
+}
+
+input {
+	font-family: 'IBM Plex Mono';
+	font-weight: 500;	
 }
 
 .login-entry {
@@ -110,14 +116,30 @@ a:hover {
 	color: var(--red);
 }
 
+.search-section {
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+.search-textbooks {
+	display: flex;
+	flex-flow: column wrap;	
+
+}
+
+#search-query {
+
+}
+
 .edit-textbooks {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 
 }
 
 .textbook-entry {
 	margin-right: 5vw;
+	max-width: 600px;
 }
 
 .new-textbooks {
@@ -257,7 +279,7 @@ input[type=submit]:hover {
 	margin-right: 4px;
 }
 
-.recent-textbooks, .recent-textbook-header {
+.textbook-display {
 	/*width: 550px;*/
 	width: 1180px;
 }
