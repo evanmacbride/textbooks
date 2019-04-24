@@ -1,11 +1,3 @@
-// TODO: Use custom attribute doc-id instead of button id to store document id.
-// Edit records in place by making each recent-textbook a form that
-// defaults to readonly or disabled. Add an "edit" button that will
-// remove the disabled attribute. Add an "undo" button to revert to
-// previous values and cancel edit. Add a "save" button to save
-// changes and revert recent-textbook to disabled. Exclude config
-// from version?
-
 $(document).ready(function() {
 	// Initialize Firebase
 	var config = {
@@ -52,6 +44,42 @@ $(document).ready(function() {
 			});
 		});
 	}
+	
+	function displaySearchResults(queryField, queryValue) {
+		$(".recent-textbooks").html("");
+		db.collection("textbooks").where(queryField, ">=", queryValue).orderBy(queryField)
+			.get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				var $recentHtml = $(".recent-textbooks").html();
+				var $textbookId = doc.id;
+				$(".recent-textbooks").html(
+					
+					$recentHtml + "<li class='recent-textbook' data-id='" + 
+					$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
+					doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
+					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
+					doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
+					doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
+					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+					doc.data().isbn + "'></input><span class='textbook-func'>" +
+					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
+					"<i class='far fa-save'></i></button>" +					
+					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
+					"<i class='fas fa-undo-alt'></i></button>" +					
+					"<button type='button' class='edit-textbook' title='edit textbook'>" +
+					"<i class='far fa-edit'></i></button>" +
+					"<button type='button' class='delete-textbook' id='" + 
+					$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
+			});
+		});		
+	}
+	
+	$(".wrap").on("submit", ".search-textbooks",function(event) {
+		event.preventDefault();
+		var $queryValue = $(this).find("#search-query").val();
+		displaySearchResults("title",$queryValue);
+	});
+
 	
 	// Check for log-in or log-out.
 	firebase.auth().onAuthStateChanged(firebaseUser => {
