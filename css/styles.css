@@ -101,7 +101,7 @@ a:hover {
 	font-weight: 700;
 }
 
-input {
+input, select, footer {
 	font-family: 'IBM Plex Mono';
 	font-weight: 500;	
 }
@@ -154,7 +154,7 @@ input {
 	flex-direction: column;
 }
 
-.new-textbooks {
+.new-textbooks, select {
 	max-width: 200px;
 }
 

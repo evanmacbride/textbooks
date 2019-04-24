@@ -77,7 +77,8 @@ $(document).ready(function() {
 	$(".wrap").on("submit", ".search-textbooks",function(event) {
 		event.preventDefault();
 		var $queryValue = $(this).find("#search-query").val();
-		displaySearchResults("title",$queryValue);
+		var $queryType = $(this).find("#query-type").val();
+		displaySearchResults($queryType,$queryValue);
 	});
 
 	

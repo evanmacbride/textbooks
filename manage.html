@@ -5,7 +5,7 @@
 <main role="main">
 	<section class="edit-textbooks">
 		<section class="textbook-entry">
-			<h2>Enter New Textbook</h2>
+			<h2>Add New Textbook</h2>
 			<form class="new-textbooks">
 				<div class="new-param param">					
 					<label for="new-course">Course</label>
@@ -43,6 +43,17 @@
 					<input type="text" name="search-query" id="search-query">
 				</div>
 				<input type="submit" value="Search" id="submit-search" name="submit">
+				<div class="param search-param">
+					<label for="query-type">Search By</label>
+					<select name="query-type" id="query-type">
+						<option value="course">Course</option>
+						<option value="semester">Semester</option>
+						<option value="lead">Course Lead</option>
+						<option value="title">Book Title</option>
+						<option value="author">Book Author</option>
+						<option value="isbn">Book ISBN</option>
+					</select>
+				</div>
 			</form>
 		</section>
 		<section class="textbook-display">
