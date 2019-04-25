@@ -146,7 +146,7 @@ input, select, footer {
 
 .textbook-entry-inner-wrap {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 }
 
 .success-message {
