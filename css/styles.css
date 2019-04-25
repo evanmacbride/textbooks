@@ -293,10 +293,15 @@ input[type=submit]:hover {
 	align-items: center;
 }
 
-.recent-textbook .edit-form input {
+.recent-textbook .edit-form input:disabled {
 	background-color: inherit !important;
 	color: inherit !important;
-	border: none;
+	border: 1px solid transparent;
+}
+
+.recent-textbook .edit-form input {
+	/*border: none;*/
+	border: 1px solid var(--midgrey);
 	box-sizing: border-box;
 }
 
