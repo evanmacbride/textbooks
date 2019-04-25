@@ -55,15 +55,14 @@ $(document).ready(function() {
 				var $recentHtml = $(".recent-textbooks").html();
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
-					
 					$recentHtml + "<li class='recent-textbook' data-id='" + 
 					$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
-					doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
-					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
-					doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
-					doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
-					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
-					doc.data().isbn + "'></input><span class='textbook-func'>" +
+					doc.data().course + "' last-saved='" + doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
+					doc.data().semester + "' last-saved='" + doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
+					doc.data().lead + "' last-saved='" + doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
+					doc.data().title + "' last-saved='" + doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
+					doc.data().author + "' last-saved='" + doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+					doc.data().isbn + "' last-saved='" + doc.data().isbn + "'></input><span class='textbook-func'>" +
 					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
 					"<i class='far fa-save'></i></button>" +					
 					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
@@ -139,6 +138,16 @@ $(document).ready(function() {
 		});
 	});
 	
+	// Undo current edit by swapping all values with last-saved attribute.
+	// Get the current form then go through inputs iteratively.
+	$(".wrap").on("click", ".undo-edit", function(event) {	
+		$thisForm = $(this).parent().parent();
+		$inputs = $(this).parent().parent().find("input");
+		$inputs.each(function() {
+			$(this).val($(this).attr("last-saved"));
+		});
+	});
+	
 	// Save edits in place by clicking save-edit icon.
 	$(".wrap").on("submit", ".edit-form", function(event) {
 		event.preventDefault();
@@ -183,7 +192,6 @@ $(document).ready(function() {
 	});
 
 	// Add new textbooks into database from new-textbooks form.
-	// TODO: Indicate success of upload to user.
 	$(".wrap").on("submit", ".new-textbooks", function(event) {
 		event.preventDefault();
 		//var d = new Date();
