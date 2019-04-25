@@ -117,7 +117,6 @@ input, select, footer {
 }
 
 .search-section {
-	margin-bottom: 0;
 	max-width: 600px;
 }
 
@@ -137,6 +136,17 @@ input, select, footer {
 	display: flex;
 	flex-flow: column wrap;
 
+}
+
+.textbook-entry-inner-wrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.success-message {
+	font-family: 'IBM Plex Mono';
+	margin-top: 0.26rem;
+	display: none; /* Default to hidden. Display on successful addition to database. */
 }
 
 .textbook-entry {

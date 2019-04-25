@@ -6,34 +6,38 @@
 	<section class="edit-textbooks">
 		<section class="textbook-entry">
 			<h2>Add New Textbook</h2>
-			<form class="new-textbooks">
-				<div class="new-param param">					
-					<label for="new-course">Course</label>
-					<input type="number" min="1" max="999" name="course" step="1" id="new-course">
-				</div>
-				<div class="new-param param">					
-					<label for="new-semester">Semester</label>
-					<input type="number" min="0" max="999999" name="semester" step="1" id="new-semester">
-				</div>
-				<div class="new-param param">					
-					<label for="new-lead">Lead</label>
-					<input type="text" name="lead" id="new-lead">
-				</div>
-				<div class="new-param param">
-					<label for="new-title">Title</label>
-					<input type="text" name="textbook-title" id="new-title">
-				</div>
-				<div class="new-param param">
-					<label for="new-author">Author</label>
-					<input type="text" name="textbook-author" id="new-author">
-				</div>				
-				<div class="new-param param">
-					<label for="new-ISBN">ISBN</label>
-					<input type="number" min="1" max="99999999999999" name="ISBN" id="new-ISBN">
-				</div>
-
-				<input type="submit" value="Submit" id="submit-new" name="submit">
-			</form>
+			<div class="textbook-entry-inner-wrap">
+				<form class="new-textbooks">
+					<div class="new-param param">					
+						<label for="new-course">Course</label>
+						<input type="number" min="1" max="999" name="course" step="1" id="new-course">
+					</div>
+					<div class="new-param param">					
+						<label for="new-semester">Semester</label>
+						<input type="number" min="0" max="999999" name="semester" step="1" id="new-semester">
+					</div>
+					<div class="new-param param">					
+						<label for="new-lead">Lead</label>
+						<input type="text" name="lead" id="new-lead">
+					</div>
+					<div class="new-param param">
+						<label for="new-title">Title</label>
+						<input type="text" name="textbook-title" id="new-title">
+					</div>
+					<div class="new-param param">
+						<label for="new-author">Author</label>
+						<input type="text" name="textbook-author" id="new-author">
+					</div>				
+					<div class="new-param param">
+						<label for="new-ISBN">ISBN</label>
+						<input type="number" min="1" max="99999999999999" name="ISBN" id="new-ISBN">
+					</div>
+					<input type="submit" value="Submit" id="submit-new" name="submit">
+				</form>
+				<aside class="success-message">
+					Added book to database.
+				</aside>
+			</div>
 		</section>
 		<section class="search-section">
 			<h2>Search Textbooks</h2>
