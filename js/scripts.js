@@ -103,7 +103,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	// Handle log-ins
+	// Log in
 	$(".wrap").on("submit",".login-form",function(event) {
 		event.preventDefault();
 		var $user = $("#username").val();
@@ -182,7 +182,7 @@ $(document).ready(function() {
 		});
 	});
 
-	// Load new textbooks into database from new-textbooks form.
+	// Add new textbooks into database from new-textbooks form.
 	// TODO: Indicate success of upload to user.
 	$(".wrap").on("submit", ".new-textbooks", function(event) {
 		event.preventDefault();
@@ -206,9 +206,16 @@ $(document).ready(function() {
 		})
 		.then(function(docRef) {
 			console.log("Document written with ID: ", docRef.id);
+			$message = $(".success-message");
+			$message.html("SUCCESS! Added " + $title + " to database.");
+			$message.show();
 		})
 		.catch(function(error) {
 			console.error("Error adding document: ", error);
+			$message = $(".success-message");
+			$message.css("color","var(--red)");
+			$message.html("Error! Could not add " + $title + " to database.");
+			$message.show();
 		});
 		//displayAllBooks();
 		$(this)[0].reset();
