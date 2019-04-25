@@ -14,10 +14,7 @@ $(document).ready(function() {
 	
 	// Fetch recent textbooks from database and render them 
 	// into recent-textbooks.
-	// TODO: Allow sorting by different parameters. Show new
-	// parameters (timestamp etc.). Create a second line of
-	// data that will scroll down upon pushing an "info" icon.
-	function displayRecent() {
+	function displayAllBooks() {
 		$(".recent-textbooks").html("");
 		db.collection("textbooks")
 			.get().then((querySnapshot) => {
@@ -98,7 +95,7 @@ $(document).ready(function() {
 			console.log(firebaseUser);
 			$(".wrap").load("manage.html");
 			$(document).prop("title", "Textbook Database");
-			displayRecent();
+			displayAllBooks();
 		} else {
 			$(".wrap").load("login.html");
 			$(document).prop("title", "Textbook Database Log In");
@@ -213,8 +210,8 @@ $(document).ready(function() {
 		});
 		// Could I just display the new record from the local data 
 		// after a successful upload? Do I need to 
-		// call displayRecent()?
-		displayRecent();
+		// call displayAllBooks()?
+		displayAllBooks();
 		$(this)[0].reset();
 	});
 
