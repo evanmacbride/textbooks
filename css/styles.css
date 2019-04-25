@@ -127,8 +127,10 @@ input, select, footer {
 
 }
 
-#search-query {
-
+.search-btn-wrap {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
 }
 
 .edit-textbooks {
@@ -162,7 +164,7 @@ input, select, footer {
 	max-width: 100px;
 }
 
-label {
+label, select {
 	line-height: 1.55;
 	margin: 0.26rem 0px 0px 0px;
 }
@@ -334,6 +336,7 @@ input[type=submit]:hover {
 .textbook-display {
 	display: none; /* Default to hidden. Only display after first search. */
 	width: 1180px;
+	margin-left: -6px;
 }
 
 @media screen and (max-width: 620px) {

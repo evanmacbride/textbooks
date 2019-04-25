@@ -42,9 +42,11 @@
 					<label for="search-query">Enter your search query</label>
 					<input type="text" name="search-query" id="search-query">
 				</div>
-				<input type="submit" value="Search" id="submit-search" name="submit">
 				<div class="param search-param">
-					<label for="query-type">Search By</label>
+					<div class="search-btn-wrap">
+						<label for="query-type">Search By</label>
+						<input type="submit" value="Search" id="submit-search" name="submit">
+					</div>
 					<select name="query-type" id="query-type">
 						<option value="course">Course Number</option>
 						<option value="semester">Semester</option>
@@ -55,11 +57,6 @@
 					</select>
 				</div>
 				<div class="param search-param check-param">
-					<!--<label for="strict-search">Exact Matches Only</label>
-					<div class="check-container">
-						<input type="checkbox" name="strict-search" id="strict-search">
-						<span class="checkmark"></span>
-					</div>-->
 					<label for="strict-search">Exact Matches Only</label>
 					<label class="check-container">
 						<input type="checkbox" name="strict-search" id="strict-search">
