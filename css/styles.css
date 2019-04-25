@@ -151,7 +151,6 @@ input, select, footer {
 
 .success-message {
 	font-family: 'IBM Plex Mono';
-	color: var(--green);
 	margin-top: 0.26rem;
 	display: none; /* Default to hidden. Display on successful addition to database. */
 }

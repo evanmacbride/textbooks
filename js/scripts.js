@@ -213,7 +213,6 @@ $(document).ready(function() {
 		.catch(function(error) {
 			console.error("Error adding document: ", error);
 			$message = $(".success-message");
-			$message.css("color","var(--red)");
 			$message.html("Error! Could not add " + $title + " to database.");
 			$message.show();
 		});
