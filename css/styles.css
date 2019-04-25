@@ -21,14 +21,20 @@
 :root {
 	--bluegrey: #eae9f7;
 	--black: #08080a;
-	--lightblue: #d8d6ff;
-	--brightblue: #3c2ff9;
+	/*--lightblue: #d8d6ff;
+	--brightblue: #3c2ff9;*/
+	--lightblue: #3ab4cb;
+	
+	--brightblue: #164883;
+	--green: #16af61;
+	
 	--red: #e3170a;
 	--blackgrey: #222;
 	--darkgrey: #666;
 	--midgrey: #999;
 	--lightgrey: #d8d8d8;
-	--whitegrey: #e6e6e6;
+	/*--whitegrey: #e6e6e6;*/
+	--whitegrey: #f0e7ec;
 	--offwhite: #f8f8f8;
 }
 
@@ -50,10 +56,10 @@ body {
 
 .banner {
 	margin-left: -5vw;
-	background-color: var(--lightblue);
+	background-color: var(--whitegrey);
 	padding: 3rem 0 0 5vw;
 	margin-bottom: 0;
-	border-bottom: 6px solid var(--brightblue);
+	border-bottom: 6px solid var(--green);
 }
 
 main {
@@ -82,7 +88,7 @@ h1 {
 h2 {
 	font-size: 2rem;
 	margin: 0.78rem 0;
-	border-bottom: 4px solid var(--brightblue);
+	border-bottom: 4px solid var(--green);
 	padding-bottom: 2px;
 }
 
@@ -145,6 +151,7 @@ input, select, footer {
 
 .success-message {
 	font-family: 'IBM Plex Mono';
+	color: var(--green);
 	margin-top: 0.26rem;
 	display: none; /* Default to hidden. Display on successful addition to database. */
 }
