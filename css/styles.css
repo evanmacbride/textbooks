@@ -332,7 +332,7 @@ input[type=submit]:hover {
 }
 
 .textbook-display {
-	/*width: 550px;*/
+	display: none; /* Default to hidden. Only display after first search. */
 	width: 1180px;
 }
 

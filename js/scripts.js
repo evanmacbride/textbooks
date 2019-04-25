@@ -85,6 +85,7 @@ $(document).ready(function() {
 		if ($(this).find("#strict-search").is(":checked")) {
 			matchType = "==";
 		}
+		$(".textbook-display").css("display","inline-block");
 		displaySearchResults($queryType,matchType,$queryValue);
 	});
 
