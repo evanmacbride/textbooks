@@ -25,7 +25,7 @@
 	--brightblue: #3c2ff9;*/
 	--lightblue: #3ab4cb;
 	
-	--brightblue: #164883;
+	--brightblue: #116dee;
 	--green: #16af61;
 	
 	--red: #e3170a;
@@ -277,7 +277,7 @@ input:checked + .checkmark:after {
 }
 
 input[type=submit]:hover {
-	opacity: 0.75;
+	opacity: 0.82;
 }
 
 .recent-textbook {
