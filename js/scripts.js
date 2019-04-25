@@ -95,7 +95,7 @@ $(document).ready(function() {
 			console.log(firebaseUser);
 			$(".wrap").load("manage.html");
 			$(document).prop("title", "Textbook Database");
-			displayAllBooks();
+			//displayAllBooks();
 		} else {
 			$(".wrap").load("login.html");
 			$(document).prop("title", "Textbook Database Log In");
@@ -182,6 +182,7 @@ $(document).ready(function() {
 	});
 
 	// Load new textbooks into database from new-textbooks form.
+	// TODO: Indicate success of upload to user.
 	$(".wrap").on("submit", ".new-textbooks", function(event) {
 		event.preventDefault();
 		//var d = new Date();
@@ -208,10 +209,7 @@ $(document).ready(function() {
 		.catch(function(error) {
 			console.error("Error adding document: ", error);
 		});
-		// Could I just display the new record from the local data 
-		// after a successful upload? Do I need to 
-		// call displayAllBooks()?
-		displayAllBooks();
+		//displayAllBooks();
 		$(this)[0].reset();
 	});
 
