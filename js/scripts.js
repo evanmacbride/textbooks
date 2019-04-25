@@ -151,6 +151,11 @@ $(document).ready(function() {
 	// Save edits in place by clicking save-edit icon.
 	$(".wrap").on("submit", ".edit-form", function(event) {
 		event.preventDefault();
+		// If I wanted to lock last-saved to current value on save,
+		// I could do these next 3 lines for each field.
+		/*$formCourse = $(this).find(".textbook-course");
+		var $course = $formCourse.val();
+		$formCourse.attr("last-saved",$formCourse.val());*/		
 		var $course = $(this).find(".textbook-course").val();
 		var $semester = $(this).find(".textbook-semester").val();
 		var $lead = $(this).find(".textbook-lead").val();
