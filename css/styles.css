@@ -36,6 +36,7 @@
 	/*--whitegrey: #e6e6e6;*/
 	--whitegrey: #f0e7ec;
 	--offwhite: #f8f8f8;
+	--dtccgreen: #00a854;
 }
 
 body {
@@ -54,14 +55,33 @@ body {
 	margin-left: 5vw;	
 }
 
+/***********************attempt at adding stuff to the banner***********************************/
 .banner {
 	margin-left: -5vw;
-	background-color: var(--whitegrey);
+	background-color: var(--dtccgreen);
 	padding: 3rem 0 0 5vw;
 	margin-bottom: 0;
 	border-bottom: 6px solid var(--green);
 }
 
+.banner #bannerPic {
+	background: url(pics/logo400x400.jpg) no-repeat;
+	/*margin-left: 5vw;
+	margin-right: 5vw;*/
+	float: left;
+}
+
+.banner nav {
+	float: left;
+	margin-right: 1 vw;
+	margin-left: 1 vw;
+}
+
+#bannerPic h1{
+	text-indent: -9999px;
+}
+
+/*********************************************************************************************/
 main {
 	padding-top: 3.5rem;
 }
@@ -93,12 +113,13 @@ h2 {
 }
 
 a {
-	color: var(--brightblue) !important;
+	color: var(--black) !important;
 	text-decoration: none;
 }
 
 a:hover {
 	text-decoration: underline;
+	color: var(--brightblue) !important;
 }
 
 
@@ -272,9 +293,43 @@ input:checked + .checkmark:after {
 	transition: 0.3s;
 }
 
+/*********************Banner Buttons*************************************************/
+
+#logout {
+	float: right;
+	margin-right: 20px;
+	background-color: var(--darkgrey);
+	color: var(--offwhite);
+	border: 0;
+	border-radius: 0 0 10px 10px;
+	padding: 4px 8px 6px 8px;
+	margin-top: 6px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
 #logout:hover {
 	background-color: var(--midgrey);
 }
+
+#home {
+	float: right;
+	margin-right: 10px;
+	background-color: var(--darkgrey);
+	color: var(--offwhite);
+	border: 0;
+	border-radius: 0 0 10px 10px;
+	padding: 4px 8px 6px 8px;
+	margin-top: 6px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#home:hover {
+	background-color: var(--midgrey);
+}
+
+/*************************End of Banner Buttons**************************************/
 
 input[type=submit]:hover {
 	opacity: 0.82;
@@ -426,18 +481,44 @@ input[type=submit]:hover {
 
 .edit-textbook:hover {
 	opacity: 0.7;
+	transform: scale(1.1);
+	transition-duration: 0.2s;
 }
 
 .delete-textbook:hover {
 	/*opacity: 1;*/
 	color: var(--red);
+	transform: scale(1.1);
+	transition-duration: 0.2s;
 }
 
-footer {
-	margin-left: 5vw;
+/************************section for FAQ and USer Guide styles*****************************/
+
+.faq {
 	display: flex;
+}
+
+.user-guide {
+	display: flex;
+}
+
+#guide {
+	
+}
+
+/******************************************************************************************/
+
+footer {
+	width: 100vw;
+	margin-bottom: none;
+	display: flex;
+	background-color: var(--dtccgreen);
 	justify-content: flex-start;
 	align-items: flex-end;
+}
+
+footer p {
+	margin-left: 5vw;
 }
     
 /* ---------------------------------------------------------
