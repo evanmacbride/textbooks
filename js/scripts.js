@@ -237,4 +237,9 @@ $(document).ready(function() {
 	$(".wrap").on("click", "#logout", function() {
 		auth.signOut();
 	});
+	
+	//Home banner button
+	$(".wrap").on("click", "#home", function() {
+		$(".wrap").load("login.html");
+	});
 });
