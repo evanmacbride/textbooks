@@ -365,6 +365,7 @@ input[type=submit]:hover {
 
 .textbook-author {
 	width: 18%;
+	min-width: 56px;
 }
 
 .textbook-isbn {
