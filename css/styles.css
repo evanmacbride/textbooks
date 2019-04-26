@@ -129,7 +129,7 @@ input {
 }
 
 .search-section {
-	max-width: 600px;
+	max-width: 50vw;
 }
 
 .search-textbooks {
@@ -164,7 +164,7 @@ input {
 
 .textbook-entry {
 	margin-right: 5vw;
-	max-width: 600px;
+	max-width: 50vw;
 }
 
 .new-textbooks {
@@ -298,6 +298,7 @@ input[type=submit]:hover {
 }
 
 .recent-textbook .edit-form, .recent-textbook-header {
+	box-sizing: border-box;
 	padding: 8px 6px;	
 	display: flex;
 	flex-direction: row;
@@ -316,6 +317,10 @@ input[type=submit]:hover {
 	/*border: none;*/
 	border: 1px solid var(--midgrey);
 	box-sizing: border-box;
+}
+
+.edit-form .textbook-func {
+	margin-right: 0;
 }
 
 .textbook-display h2 {
@@ -339,26 +344,37 @@ input[type=submit]:hover {
 
 .textbook-course {
 	width: 6%;
-}
-
-.textbook-lead {
-	width: 4.5%;
+	min-width: 58px;
 }
 
 .textbook-semester {
 	width: 7.5%;
+	min-width: 76px;
 }
+
+
+.textbook-lead {
+	width: 4.5%;
+	min-width: 40px;
+}
+
 
 .textbook-title {
 	width: 36%;
 }
 
-.textbook-isbn, .textbook-author {
+.textbook-author {
 	width: 18%;
 }
 
+.textbook-isbn {
+	width: 14%;
+	min-width: 132px;
+}
+
 .textbook-func {
-	width: 9%;
+	width: 13%;
+	min-width: 100px;
 }
 
 .recent-textbook *, .recent-textbook-header * {
@@ -369,29 +385,39 @@ input[type=submit]:hover {
 
 .textbook-display {
 	display: none; /* Default to hidden. Only display after first search. */
-	width: 1180px;
+	width: 90vw;
 	margin-left: -6px;
 }
 
 @media screen and (max-width: 620px) {
 	.recent-textbooks, .recent-textbook-header {
-	width: 90vw;
+	/*width: 90vw;*/
 	}
 	
-	.textbook-isbn {
+	.textbook-lead, .textbook-author, .textbook-isbn  {
 		display: none;
 	}
 	
+	.textbook-course {
+		width: 14%;
+	}
+	
 	.textbook-title {
-		width: 50%;
+		width: 43%;
 	}
 
 	.textbook-semester {
-		width: 40%;
+		width: 18%;
 	}
 
 	.textbook-func {
-		width: 10%;
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.textbook-semester {
+		display: none;
 	}
 }
 
