@@ -185,6 +185,11 @@ h2 {
 	padding-bottom: 2px;
 }
 
+h3 {
+	font-size: 1.125rem;
+	margin: 0.78rem 0;
+}
+
 a {
 	color: var(--brightblue) !important;
 	text-decoration: none;
@@ -204,7 +209,7 @@ input {
 	font-weight: 500;	
 }
 
-.welcome {
+.welcome, .contact-section {
 	margin-left: 10vw;
 	text-align: right;
 	width: 50vw;
@@ -212,13 +217,30 @@ input {
 }
 
 @media screen and (max-width: 620px) {
-	.welcome {
+	.welcome, .contact-section {
 		margin-left: 0;
 		width: 90vw;
 	}
 }
 
-.welcome-message {
+.contact-section {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.contact-section a {
+	color: var(--darkgreen) !important;
+}
+
+.contact-list {
+	align-self: flex-end;
+}
+
+.email-link {
+	line-height: 1.85;
+}
+
+.welcome-message, .contact-list {
 	font-size: 1.125rem;
 	float: right;
 	line-height: 1.85;

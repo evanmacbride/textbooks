@@ -276,11 +276,22 @@ $(document).ready(function() {
 		});
 	});
 
+	// Load Home Page
 	$(".banner").on("click", "#home-page", function() {
 		$(".wrap").load("home.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#home-page").addClass("active-page");
+			},1);				
+		});
+	});
+	
+	// Load Contact Page
+	$(".banner").on("click", "#about-btn", function() {
+		$(".wrap").load("contact.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$("#about-btn").addClass("active-page");
 			},1);				
 		});
 	});
