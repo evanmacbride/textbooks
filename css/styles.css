@@ -47,7 +47,7 @@ body {
 	font-weight: 500;
 	background-color: white;
 	color: var(--black);
-	height: 99vh;
+	height: 100vh;
 	margin-right: 0;
 	box-sizing: border-box;
 }
@@ -56,7 +56,7 @@ body {
 	height: 120px;
 	padding: 0 6px 6px 0;
 	/*margin-bottom: 6px;*/
-	margin-right: 22px;
+	margin-right: 20px;
 }
 
 .wrap {
@@ -66,7 +66,7 @@ body {
 .banner {
 	margin-left: -5vw;
 	background-color: var(--offwhite);
-	padding: 32px 0 0 6px;
+	padding: 32px 0 0 8px;
 	margin-bottom: 0;
 	border-bottom: 6px solid var(--green);
 
@@ -94,6 +94,7 @@ body {
 .nav-link {
 	font-weight: 600;
 	display: inline;
+	transition: 0.15s;
 }
 
 .nav-link:hover {
@@ -164,6 +165,27 @@ a:hover {
 
 input {
 	font-weight: 500;	
+}
+
+.welcome {
+	margin-left: 10vw;
+	text-align: right;
+	width: 50vw;
+	max-width: 1100px;	
+}
+
+@media screen and (max-width: 620px) {
+	.welcome {
+		margin-left: 0;
+		width: 90vw;
+	}
+}
+
+.welcome-message {
+	font-size: 1.125rem;
+	float: right;
+	line-height: 1.85;
+	max-width: 440px;
 }
 
 .login-entry {

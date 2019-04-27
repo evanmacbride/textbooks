@@ -92,11 +92,10 @@ $(document).ready(function() {
 		if (firebaseUser) {
 			console.log(firebaseUser);
 			$(".wrap").load("manage.html");
-			$(document).prop("title", "Textbook Database");
-			//displayAllBooks();
+			/*$(document).prop("title", "Textbook Database");*/
 		} else {
-			$(".wrap").load("login.html");
-			$(document).prop("title", "Textbook Database Log In");
+			$(".wrap").load("home.html");
+			/*$(document).prop("title", "Textbook Database Log In");*/
 		}
 	});
 	
