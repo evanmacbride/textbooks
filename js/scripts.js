@@ -92,17 +92,9 @@ $(document).ready(function() {
 		// If logged in
 		if (firebaseUser) {
 			console.log(firebaseUser);
-			// Jump to Search & Manage screen. Hide login-btn and 
-			// show logout-btn and search-manage.
-			$(".wrap").load("manage.html", function() {
-				$(".logout-btn").show();
-				/*$("#search-manage").show();*/
-				$(".login-btn").hide();
-				$(".active-page").removeClass("active-page");
-				setTimeout(function() {
-					$("#search-manage").addClass("active-page");
-				},1);
-			});
+			// Hide login-btn and show logout-btn.
+			$(".logout-btn").show();
+			$(".login-btn").hide();
 		// If logged out
 		} else {
 			$(".wrap").load("home.html", function() {
@@ -113,12 +105,21 @@ $(document).ready(function() {
 		}
 	});
 	
-	// Log in by submitting login-form
+	// Log in by submitting login-form. Jump to Search & Manage after
+	// logging in.
 	$(".wrap").on("submit",".login-form",function(event) {
 		event.preventDefault();
 		var $user = $("#username").val();
 		var $pass = $("#password").val();
 		const promise = auth.signInWithEmailAndPassword($user,$pass);
+		promise.then(function() {
+			$(".wrap").load("manage.html", function() {
+				$(".active-page").removeClass("active-page");
+				setTimeout(function() {
+					$("#search-manage").addClass("active-page");
+				},1);				
+			});
+		});
 		promise.catch(function(event) {
 			// Provide a username/password not found message and log
 			// error to console.
