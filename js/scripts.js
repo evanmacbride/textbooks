@@ -252,11 +252,11 @@ $(document).ready(function() {
 		$(this)[0].reset();
 	});
 	
-	$(".wrap").on("click", "#search-manage", function() {
+	$(".banner").on("click", "#search-manage", function() {
 		$(".wrap").load("manage.html");
 	});	
 	
-	$(".wrap").on("click", ".login-btn", function() {
+	$(".banner").on("click", ".login-btn", function() {
 		$(".wrap").load("login.html");
 	});
 
@@ -266,7 +266,7 @@ $(document).ready(function() {
 	});*/
 	
 	// Sign out the user by clicking log-out button.
-	$(".wrap").on("click", ".logout-btn", function() {
+	$(".banner").on("click", ".logout-btn", function() {
 		auth.signOut();
 	});	
 });
