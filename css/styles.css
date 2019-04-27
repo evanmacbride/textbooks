@@ -28,6 +28,7 @@
 	--brightblue: #116dee;
 	--green: #16af61;
 	
+	--darkgreen: #0a6d3a;
 	--red: #e3170a;
 	--blackgrey: #222;
 	--darkgrey: #666;
@@ -74,6 +75,29 @@ body {
 .logo-wrap {
 	display: flex;
 	flex-flow: row wrap;	
+}
+
+.nav-container {
+	padding-top: 4px;
+}
+
+.nav-link {
+	font-weight: 600;
+	display: inline;
+}
+
+.nav-link:hover {
+	cursor: pointer;
+	color: var(--darkgreen);
+}
+
+.nav-link:after {
+	color: var(--black);
+	content: " |";
+}
+
+.nav-link:last-child:after {
+	content: "";
 }
 
 main {
@@ -522,10 +546,17 @@ input[type=submit]:hover {
 }
 
 footer {
-	margin-left: 5vw;
+	background-color: var(--darkgreen);
+	padding-left: 5vw;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-end;
+	color: var(--offwhite);
+}
+
+footer a {
+	color: inherit !important;
+	opacity: 0.78;
 }
     
 /* ---------------------------------------------------------
