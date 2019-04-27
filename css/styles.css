@@ -298,6 +298,24 @@ input[type=submit]:hover {
 	background-color: var(--whitegrey);
 }
 
+@keyframes success-anim {
+	0% {background-color: var(--green);}
+	100% {background-color: var(--whitegrey);}
+}
+
+@keyframes success-anim-light {
+	0% {background-color: var(--green);}
+	100% {background-color: var(--offwhite);}
+}
+
+.successful {
+	animation: success-anim 0.8s;
+}
+
+.recent-textbooks li:nth-child(even).successful {
+	animation: success-anim-light 0.8s;
+}
+
 .recent-textbook .edit-form, .recent-textbook-header {
 	box-sizing: border-box;
 	padding: 8px 6px;	
@@ -447,8 +465,10 @@ input[type=submit]:hover {
 #function-message {
 	display: none;
 	overflow: visible;
-	opacity: 0.75;
+	opacity: 0.88;
 }
+
+
 
 .recent-textbook-header .textbook-func {
 	overflow: visible;
@@ -458,14 +478,6 @@ input[type=submit]:hover {
 	margin: 0;
 	padding: 0 3px;
 	display: inline-block;
-	/*display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-end;
-	align-items: center;
-	margin-left: auto;
-	background-color: var(--red);
-	width: 20px;
-	border-radius: 10px;*/
 	background-color: transparent;
 	color: var(--blackgrey);
 	font-weight: 700;

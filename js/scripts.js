@@ -160,6 +160,7 @@ $(document).ready(function() {
 		var $title = $(this).find(".textbook-title").val();
 		var $author = $(this).find(".textbook-author").val();
 		var $ISBN = $(this).find(".textbook-isbn").val();
+		var $thisLine = $(this).parent();
 		var $thisDoc = $(this).parent().attr("data-id");
 		var docRef = db.collection("textbooks").doc($thisDoc);
 		docRef.get().then(function(thisDoc) {
@@ -174,8 +175,12 @@ $(document).ready(function() {
 			})
 			.then(function() {
 				$message = $("#function-message");
-				$message.html("Changes saved");
-				$message.fadeIn(60).delay(1200).fadeOut(300);
+				$message.html("Changes saved").css("color","var(--green)");
+				$thisLine.addClass("successful");
+				setTimeout(function() {
+					$thisLine.removeClass("successful");
+				},800);
+				$message.fadeIn(1).delay(1200).fadeOut(300);
 			})
 			/*.then(function(docRef) {
 				console.log("Document updated with ID: ", docRef.id);
@@ -194,8 +199,8 @@ $(document).ready(function() {
 			$deletingBtn.parent().parent().parent().remove();
 			console.log("Document successfully deleted!");
 			$message = $("#function-message");
-			$message.html("Book deleted");
-			$message.fadeIn(60).delay(1200).fadeOut(300);
+			$message.html("Book deleted").css('color','var(--red)');
+			$message.fadeIn(1).delay(1200).fadeOut(300);
 		}).catch(function(error) {
 			console.error("Error removing document: ", error);
 		});
