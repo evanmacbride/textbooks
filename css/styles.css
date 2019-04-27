@@ -111,6 +111,10 @@ body {
 	content: "";
 }
 
+.logout-btn {
+	/*display: none;*/
+}
+
 main {
 	padding-top: 2.18rem;
 }

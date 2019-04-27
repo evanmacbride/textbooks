@@ -11,7 +11,7 @@ $(document).ready(function() {
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
 	const auth = firebase.auth();
-	
+		
 	// Display all books in a formatted table.
 	function displayAllBooks() {
 		$(".recent-textbooks").html("");
@@ -89,17 +89,27 @@ $(document).ready(function() {
 	
 	// Check for log-in or log-out.
 	firebase.auth().onAuthStateChanged(firebaseUser => {
+		// If logged in
 		if (firebaseUser) {
 			console.log(firebaseUser);
-			$(".wrap").load("manage.html");
-			/*$(document).prop("title", "Textbook Database");*/
+			// Jump to Search & Manage screen. Hide login-btn and 
+			// show logout-btn and search-manage.
+			$(".wrap").load("manage.html", function() {
+				$(".logout-btn").show();
+				$("#search-manage").show();
+				$(".login-btn").hide();
+			});
+		// If logged out
 		} else {
-			$(".wrap").load("home.html");
-			/*$(document).prop("title", "Textbook Database Log In");*/
+			$(".wrap").load("home.html", function() {
+				$(".login-btn").show();
+				$(".logout-btn").hide();
+				$("#search-manage").hide();				
+			});
 		}
 	});
 	
-	// Log in
+	// Log in by submitting login-form
 	$(".wrap").on("submit",".login-form",function(event) {
 		event.preventDefault();
 		var $user = $("#username").val();
@@ -241,9 +251,22 @@ $(document).ready(function() {
 		//displayAllBooks();
 		$(this)[0].reset();
 	});
+	
+	$(".wrap").on("click", "#search-manage", function() {
+		$(".wrap").load("manage.html");
+	});	
+	
+	$(".wrap").on("click", ".login-btn", function() {
+		$(".wrap").load("login.html");
+	});
 
 	// Sign out the user by clicking log-out button.
-	$(".wrap").on("click", "#logout", function() {
+	/*$(".wrap").on("click", "#logout", function() {
 		auth.signOut();
-	});
+	});*/
+	
+	// Sign out the user by clicking log-out button.
+	$(".wrap").on("click", ".logout-btn", function() {
+		auth.signOut();
+	});	
 });
