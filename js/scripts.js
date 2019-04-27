@@ -12,8 +12,7 @@ $(document).ready(function() {
 	var db = firebase.firestore();
 	const auth = firebase.auth();
 	
-	// Fetch recent textbooks from database and render them 
-	// into recent-textbooks.
+	// Display all books in a formatted table.
 	function displayAllBooks() {
 		$(".recent-textbooks").html("");
 		db.collection("textbooks")
@@ -32,17 +31,16 @@ $(document).ready(function() {
 					doc.data().isbn + "'></input><span class='textbook-func'>" +
 					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
 					"<i class='far fa-save'></i></button>" +					
-					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
+					"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
 					"<i class='fas fa-undo-alt'></i></button>" +					
-					"<button type='button' class='edit-textbook' title='edit textbook'>" +
+					"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
 					"<i class='far fa-edit'></i></button>" +
 					"<button type='button' class='delete-textbook' id='" + 
 					$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
 			});
 		});
 	}
-	
-	// Display Search Results. If exact match is requested, omit orderBy().
+	// Display Search Results in a formatted table. If exact match is requested, omit orderBy().
 	function displaySearchResults(queryField, matchType, queryValue) {
 		$(".recent-textbooks").html("");
 		var order = db.collection("textbooks").where(queryField, matchType, queryValue).orderBy(queryField);
@@ -65,9 +63,9 @@ $(document).ready(function() {
 					doc.data().isbn + "' last-saved='" + doc.data().isbn + "'></input><span class='textbook-func'>" +
 					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
 					"<i class='far fa-save'></i></button>" +					
-					"<button type='button' class='undo-edit hideable hidden-btn' title='undo edit'>" +
+					"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
 					"<i class='fas fa-undo-alt'></i></button>" +					
-					"<button type='button' class='edit-textbook' title='edit textbook'>" +
+					"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
 					"<i class='far fa-edit'></i></button>" +
 					"<button type='button' class='delete-textbook' id='" + 
 					$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
