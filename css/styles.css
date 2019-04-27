@@ -360,7 +360,7 @@ input[type=submit]:hover {
 
 
 .textbook-title {
-	width: 36%;
+	width: 35%;
 }
 
 .textbook-author {
@@ -378,10 +378,15 @@ input[type=submit]:hover {
 	min-width: 100px;
 }
 
+/*.textbook-func:before {
+	content: '';
+	width: 4px;
+}*/
+
 .recent-textbook *, .recent-textbook-header * {
 	overflow: hidden;
 	white-space: nowrap;
-	margin-right: 4px;
+	/*margin-right: 4px;*/
 }
 
 .textbook-display {
@@ -389,6 +394,13 @@ input[type=submit]:hover {
 	width: 90vw;
 	margin-left: -6px;
 }
+
+@media screen and (max-width: 1100px) {
+	.textbook-title {
+		width: 27%;
+	}
+}
+
 
 @media screen and (max-width: 620px) {
 	.recent-textbooks, .recent-textbook-header {
@@ -404,7 +416,7 @@ input[type=submit]:hover {
 	}
 	
 	.textbook-title {
-		width: 43%;
+		width: 41%;
 	}
 
 	.textbook-semester {
