@@ -10,6 +10,8 @@ Create a dropdown menu for About navlink.
 
 Provide notice to user when search returns no results.
 
+Fine-tune header margins and alignment for mobile.
+
 Add scaling on function button hover.
 
 Put Add New Textbooks and Search Textbooks beside each other (not on top of each other).
