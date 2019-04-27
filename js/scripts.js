@@ -161,7 +161,6 @@ $(document).ready(function() {
 		var $author = $(this).find(".textbook-author").val();
 		var $ISBN = $(this).find(".textbook-isbn").val();
 		var $thisDoc = $(this).parent().attr("data-id");
-		// TODO: Get id of relevant doc.
 		var docRef = db.collection("textbooks").doc($thisDoc);
 		docRef.get().then(function(thisDoc) {
 			if (thisDoc.exists) {
@@ -218,7 +217,7 @@ $(document).ready(function() {
 		.then(function(docRef) {
 			console.log("Document written with ID: ", docRef.id);
 			$message = $(".success-message");
-			$message.html("SUCCESS! Added " + $title + " to database.");
+			$message.html("SUCCESS! Added " + $title + " to database.").fadeIn(60).delay(2000).fadeOut(300);
 			$message.show();
 		})
 		.catch(function(error) {
