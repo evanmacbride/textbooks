@@ -4,8 +4,20 @@ A Google Firestore demo in the form of a college textbook management system. Tex
 
 # TODO:
 
-Incorporate school branding.
+Create FAQ, User Guide, and Contact pages.
 
-Create FAQ and User Guide pages.
+Create a dropdown menu for About navlink.
 
-Meet specifications laid out in wireframe.
+Provide notice to user when search returns no results.
+
+Add scaling on function button hover.
+
+Put Add New Textbooks and Search Textbooks beside each other (not on top of each other).
+
+Provide count of search results.
+
+Permit limited functionality (i.e. search and read only) when not logged in.
+
+Change the changes saved "flash" color to a yellower green.
+
+
