@@ -124,6 +124,11 @@ main {
 	content: "";
 }
 
+#mydtcc a {
+	color: inherit !important;
+	text-decoration: none;
+}
+
 main {
 	padding-top: 2.18rem;
 }

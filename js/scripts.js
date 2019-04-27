@@ -252,20 +252,22 @@ $(document).ready(function() {
 		$(this)[0].reset();
 	});
 	
+	// Load Search & Manage page
 	$(".banner").on("click", "#search-manage", function() {
 		$(".wrap").load("manage.html");
 	});	
 	
+	// Load Log In page
 	$(".banner").on("click", ".login-btn", function() {
 		$(".wrap").load("login.html");
 	});
 
-	// Sign out the user by clicking log-out button.
-	/*$(".wrap").on("click", "#logout", function() {
-		auth.signOut();
-	});*/
+	$(".banner").on("click", "#home-page", function() {
+		$(".wrap").load("home.html");
+	});
 	
 	// Sign out the user by clicking log-out button.
+	// (Should return user to home page).
 	$(".banner").on("click", ".logout-btn", function() {
 		auth.signOut();
 	});	
