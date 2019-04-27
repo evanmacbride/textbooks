@@ -282,7 +282,7 @@ input:checked + .checkmark:after {
 	padding: 4px 8px 6px 8px;
 	margin-top: 6px;
 	cursor: pointer;
-	transition: 0.3s;
+	transition: 0.15s;
 }
 
 #logout:hover {
@@ -395,13 +395,6 @@ input[type=submit]:hover {
 	margin-left: -6px;
 }
 
-@media screen and (max-width: 1100px) {
-	.textbook-title {
-		width: 27%;
-	}
-}
-
-
 @media screen and (max-width: 620px) {
 	.recent-textbooks, .recent-textbook-header {
 	/*width: 90vw;*/
@@ -467,7 +460,7 @@ input[type=submit]:hover {
 	font-weight: 700;
 	border: 0;
 	outline-color: transparent;
-	transition: color 0.15s;
+	transition: 0.15s;
 	cursor: pointer;
 }
 
@@ -476,7 +469,7 @@ input[type=submit]:hover {
 	display: none;
 }
 
-.edit-textbook:hover {
+.edit-textbook:hover, .undo-edit:hover, .save-edit:hover {
 	opacity: 0.7;
 }
 
