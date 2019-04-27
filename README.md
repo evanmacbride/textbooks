@@ -8,7 +8,11 @@ Create FAQ, User Guide, and Contact pages.
 
 Create a dropdown menu for About navlink.
 
+Fill footer with desired links.
+
 Provide notice to user when search returns no results.
+
+Add a "Get Started!" link to home page that will take user to Search & Manage or Log In (depending on their login status).
 
 Fine-tune header margins and alignment for mobile.
 
