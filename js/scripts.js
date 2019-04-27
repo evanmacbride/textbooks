@@ -100,7 +100,10 @@ $(document).ready(function() {
 			$(".wrap").load("home.html", function() {
 				$(".login-btn").show();
 				$(".logout-btn").hide();
-				/*$("#search-manage").hide();*/				
+				$(".active-page").removeClass("active-page");
+				setTimeout(function() {
+					$("#home-page").addClass("active-page");
+				},1);				
 			});
 		}
 	});
