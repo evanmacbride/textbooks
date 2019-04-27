@@ -160,6 +160,7 @@ input {
 	font-weight: 700;
 	margin-top: 0.26rem;
 	display: none; /* Default to hidden. Display on successful addition to database. */
+	opacity: 0.82;
 }
 
 .textbook-entry {
@@ -443,6 +444,16 @@ input[type=submit]:hover {
 	text-align: right;
 }
 
+#function-message {
+	display: none;
+	overflow: visible;
+	opacity: 0.75;
+}
+
+.recent-textbook-header .textbook-func {
+	overflow: visible;
+}
+
 .delete-textbook, .edit-textbook, .undo-edit, .save-edit {
 	margin: 0;
 	padding: 0 3px;
@@ -469,8 +480,12 @@ input[type=submit]:hover {
 	display: none;
 }
 
-.edit-textbook:hover, .undo-edit:hover, .save-edit:hover {
+.edit-textbook:hover, .undo-edit:hover  {
 	opacity: 0.7;
+}
+
+.save-edit:hover {
+	color: var(--green);
 }
 
 .delete-textbook:hover {

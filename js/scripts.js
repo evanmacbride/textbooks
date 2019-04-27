@@ -172,6 +172,11 @@ $(document).ready(function() {
 				author: $author,
 				isbn: $ISBN		
 			})
+			.then(function() {
+				$message = $("#function-message");
+				$message.html("Changes saved");
+				$message.fadeIn(60).delay(1200).fadeOut(300);
+			})
 			/*.then(function(docRef) {
 				console.log("Document updated with ID: ", docRef.id);
 			})*/
@@ -188,6 +193,9 @@ $(document).ready(function() {
 		db.collection("textbooks").doc($deletingBtn.attr("id")).delete().then(function() {
 			$deletingBtn.parent().parent().parent().remove();
 			console.log("Document successfully deleted!");
+			$message = $("#function-message");
+			$message.html("Book deleted");
+			$message.fadeIn(60).delay(1200).fadeOut(300);
 		}).catch(function(error) {
 			console.error("Error removing document: ", error);
 		});
