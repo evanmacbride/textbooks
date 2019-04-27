@@ -103,7 +103,7 @@ main {
 .nav-link {
 	font-weight: 600;
 	display: inline;
-	transition: 0.15s;
+	/*transition: color 0.15s;*/
 }
 
 .nav-link:hover {
@@ -127,6 +127,25 @@ main {
 #mydtcc a {
 	color: inherit !important;
 	text-decoration: none;
+}
+
+.active-page {
+	color: var(--green) !important;
+	box-shadow: 0 3px var(--green);
+}
+
+/* The following hack allows us to box-shadow just the text
+   of the active-page name, and not the white space and link
+   divider that follows it. */
+
+.active-page:after {
+	content: '';
+}
+
+.active-page + .nav-link:before {
+	display: inline;
+	color: var(--black);
+	content: "| ";
 }
 
 main {

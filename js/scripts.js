@@ -96,15 +96,19 @@ $(document).ready(function() {
 			// show logout-btn and search-manage.
 			$(".wrap").load("manage.html", function() {
 				$(".logout-btn").show();
-				$("#search-manage").show();
+				/*$("#search-manage").show();*/
 				$(".login-btn").hide();
+				$(".active-page").removeClass("active-page");
+				setTimeout(function() {
+					$("#search-manage").addClass("active-page");
+				},1);
 			});
 		// If logged out
 		} else {
 			$(".wrap").load("home.html", function() {
 				$(".login-btn").show();
 				$(".logout-btn").hide();
-				$("#search-manage").hide();				
+				/*$("#search-manage").hide();*/				
 			});
 		}
 	});
@@ -254,16 +258,31 @@ $(document).ready(function() {
 	
 	// Load Search & Manage page
 	$(".banner").on("click", "#search-manage", function() {
-		$(".wrap").load("manage.html");
+		$(".wrap").load("manage.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$("#search-manage").addClass("active-page");
+			},1);
+		});
 	});	
 	
 	// Load Log In page
 	$(".banner").on("click", ".login-btn", function() {
-		$(".wrap").load("login.html");
+		$(".wrap").load("login.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$(".login-btn").addClass("active-page");
+			},1);			
+		});
 	});
 
 	$(".banner").on("click", "#home-page", function() {
-		$(".wrap").load("home.html");
+		$(".wrap").load("home.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$("#home-page").addClass("active-page");
+			},1);				
+		});
 	});
 	
 	// Sign out the user by clicking log-out button.
