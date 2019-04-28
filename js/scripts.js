@@ -261,7 +261,7 @@ $(document).ready(function() {
 	});
 	
 	// Load Search & Manage page
-	$(".banner").on("click", "#search-manage", function() {
+	$(document).on("click", "#search-manage", function() {
 		$(".wrap").load("manage.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {

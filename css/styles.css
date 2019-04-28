@@ -243,6 +243,19 @@ input {
 	max-width: 1100px;	
 }
 
+.welcome-end {
+	font-weight: 700;
+}
+
+.welcome-link {
+	cursor: pointer;
+	color: var(--darkgreen) !important;
+}
+
+.welcome-link:hover {
+	text-decoration: underline;	
+}
+
 .guide-section {
 	margin-left: 10vw;
 	width: 50vw;
