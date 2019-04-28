@@ -4,9 +4,7 @@ A Google Firestore demo in the form of a college textbook management system. Tex
 
 # TODO:
 
-Create FAQ, User Guide, and Contact pages.
-
-Create a dropdown menu for About navlink.
+Swap placeholder text for real content in user guide.
 
 Fill footer with desired links.
 
