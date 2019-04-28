@@ -8,8 +8,6 @@ Swap placeholder text for real content in user guide.
 
 Provide notice to user when search returns no results.
 
-Add a "Get Started!" link to home page that will take user to Search & Manage or Log In (depending on their login status).
-
 Fine-tune header margins and alignment for mobile.
 
 Add scaling on function button hover.
