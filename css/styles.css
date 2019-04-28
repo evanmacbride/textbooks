@@ -300,7 +300,7 @@ input {
 	text-decoration: underline;	
 }
 
-.guide-section {
+.guide-section, .faq-section {
 	margin-left: 10vw;
 	width: 50vw;
 	max-width: 460px;

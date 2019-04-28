@@ -260,6 +260,19 @@ $(document).ready(function() {
 		$(this)[0].reset();
 	});
 	
+	// Toggle About Dropdown
+	$(".banner").on("click", "#about-btn", function() {
+		$(".dropdown-list").toggle();
+	});
+	
+	// Close dropdown if user clicks outside of it
+	$(document).click(function(event) {
+		if(!$(event.target).parent().addBack().is(".dropdown-list") && 
+		!$(event.target).parent().addBack().is("#about-btn")) {
+			$(".dropdown-list").hide();
+		}
+	});
+	
 	// Load Search & Manage page
 	$(document).on("click", "#search-manage", function() {
 		$(".wrap").load("manage.html", function() {
@@ -289,17 +302,15 @@ $(document).ready(function() {
 			},1);				
 		});
 	});
-
-	// Toggle About Dropdown
-	$(".banner").on("click", "#about-btn", function() {
-		$(".dropdown-list").toggle();
-	});
 	
-	$(document).click(function(event) {
-		if(!$(event.target).parent().addBack().is(".dropdown-list") && 
-		!$(event.target).parent().addBack().is("#about-btn")) {
-			$(".dropdown-list").hide();
-		}
+	// Load FAQ Page
+	$(document).on("click", "#faq-page", function() {
+		$(".wrap").load("faq.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$("#about-btn").addClass("active-page");
+			},1);				
+		});
 	});
 
 	// Load Contact Page
@@ -312,7 +323,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	// Load Contact Page
+	// Load User Guide Page
 	$(document).on("click", "#user-guide-page", function() {
 		$(".wrap").load("user-guide.html", function() {
 			$(".active-page").removeClass("active-page");
