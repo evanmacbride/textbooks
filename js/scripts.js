@@ -281,6 +281,7 @@ $(document).ready(function() {
 				$("#search-manage").addClass("active-page");
 			},1);
 		});
+		$('html,body').scrollTop(0);
 	});	
 	
 	// Load Log In page
@@ -291,6 +292,7 @@ $(document).ready(function() {
 				$(".login-btn").addClass("active-page");
 			},1);			
 		});
+		$('html,body').scrollTop(0);
 	});
 
 	// Load Home Page
@@ -301,6 +303,7 @@ $(document).ready(function() {
 				$("#home-page").addClass("active-page");
 			},1);				
 		});
+		$('html,body').scrollTop(0);
 	});
 	
 	// Load FAQ Page
@@ -311,6 +314,7 @@ $(document).ready(function() {
 				$("#about-btn").addClass("active-page");
 			},1);				
 		});
+		$('html,body').scrollTop(0);
 	});
 
 	// Load Contact Page
@@ -321,6 +325,7 @@ $(document).ready(function() {
 				$("#about-btn").addClass("active-page");
 			},1);				
 		});
+		$('html,body').scrollTop(0);
 	});
 	
 	// Load User Guide Page
@@ -331,11 +336,13 @@ $(document).ready(function() {
 				$("#about-btn").addClass("active-page");
 			},1);				
 		});
+		$('html,body').scrollTop(0);
 	});
 	
 	// Sign out the user by clicking log-out button.
 	// (Should return user to home page).
 	$(".banner").on("click", ".logout-btn", function() {
 		auth.signOut();
-	});	
+		$('html,body').scrollTop(0);
+	});
 });
