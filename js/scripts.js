@@ -303,7 +303,7 @@ $(document).ready(function() {
 	});
 
 	// Load Contact Page
-	$(".banner").on("click", "#contact-page", function() {
+	$(document).on("click", "#contact-page", function() {
 		$(".wrap").load("contact.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
@@ -313,7 +313,7 @@ $(document).ready(function() {
 	});
 	
 	// Load Contact Page
-	$(".banner").on("click", "#user-guide-page", function() {
+	$(document).on("click", "#user-guide-page", function() {
 		$(".wrap").load("user-guide.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {

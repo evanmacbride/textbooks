@@ -671,17 +671,24 @@ input[type=submit]:hover {
 }
 
 footer {
-	background-color: var(--darkgreen);
-	padding-left: 5vw;
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
+	flex-flow: row wrap;
+	background-color: var(--darkgreen);
+	padding: 0 5vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	color: var(--offwhite);
 }
 
 footer a {
 	color: inherit !important;
 	opacity: 0.78;
+}
+
+.footer-link {
+	cursor: pointer;
+	text-decoration: underline;
 }
     
 /* ---------------------------------------------------------
