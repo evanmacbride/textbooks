@@ -10,11 +10,9 @@ Provide notice to user when search returns no results.
 
 Add scaling on function button hover.
 
-Put Add New Textbooks and Search Textbooks beside each other (not on top of each other).
+Put Add New Textbooks and Search Textbooks beside each other (not on top of each other) in desktop mode.
 
 Provide count of search results.
-
-Permit limited functionality (i.e. search and read only) when not logged in.
 
 Change the changes saved "flash" color to a yellower green.
 
