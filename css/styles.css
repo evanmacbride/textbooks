@@ -694,6 +694,25 @@ footer {
 	color: var(--offwhite);
 }
 
+.mobile-break {
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	footer {
+		flex-flow: column wrap;
+		align-items: flex-start;
+	}
+	
+	.footer-links {
+		padding-bottom: 12px;
+	}
+	
+	.mobile-break {
+		display: inline;
+	}
+}
+
 footer a {
 	color: inherit !important;
 	opacity: 0.78;
