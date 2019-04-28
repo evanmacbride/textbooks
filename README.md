@@ -6,8 +6,6 @@ A Google Firestore demo in the form of a college textbook management system. Tex
 
 Swap placeholder text for real content in user guide.
 
-Fill footer with desired links.
-
 Provide notice to user when search returns no results.
 
 Add a "Get Started!" link to home page that will take user to Search & Manage or Log In (depending on their login status).
