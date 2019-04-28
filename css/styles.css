@@ -148,6 +148,21 @@ main {
 	content: "| ";
 }
 
+.about-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-list {
+	padding: 2px;
+	position: absolute;
+	display: none;
+	background-color: white;
+	margin-top: 10px;
+	min-width: 100px;
+	border: 1px solid var(--green);
+}
+
 main {
 	padding-top: 2.18rem;
 }

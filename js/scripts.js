@@ -289,7 +289,12 @@ $(document).ready(function() {
 			},1);				
 		});
 	});
-	
+
+	// Toggle About Dropdown
+	$(".banner").on("click", "#about-btn", function() {
+		$(".dropdown-list").toggle();
+	});
+
 	// Load Contact Page
 	$(".banner").on("click", "#about-btn", function() {
 		$(".wrap").load("contact.html", function() {
