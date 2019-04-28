@@ -124,20 +124,6 @@ main {
 	content: "";
 }
 
-#mydtcc a {
-	color: inherit !important;
-	text-decoration: none;
-}
-
-.active-page {
-	color: var(--green) !important;
-	box-shadow: 0 3px var(--green);
-}
-
-/* The following hack allows us to box-shadow just the text
-   of the active-page name, and not the white space and link
-   divider that follows it. */
-
 .active-page:after {
 	content: '';
 }
@@ -148,19 +134,45 @@ main {
 	content: "| ";
 }
 
+#search-manage.active-page + .nav-link:before {
+	content: "|";
+}
+
+#mydtcc a {
+	color: inherit !important;
+	text-decoration: none;
+}
+
+.active-page {
+	color: var(--green) !important;
+	box-shadow: 0 3px var(--green);
+}
+
 .about-dropdown {
 	position: relative;
 	display: inline-block;
 }
 
 .dropdown-list {
-	padding: 2px;
+	padding: 6px;
+	margin: -6px;
 	position: absolute;
 	display: none;
-	background-color: white;
+	/*background-color: white;*/
+	background-color: var(--darkgreen);
+	color: white;
+
 	margin-top: 10px;
 	min-width: 100px;
-	border: 1px solid var(--green);
+	/*border: 2px solid var(--darkgreen);*/
+}
+
+.dropdown-link {
+	opacity: 0.85;
+}
+
+.dropdown-link:hover {
+	opacity: 1;
 }
 
 main {
@@ -231,8 +243,15 @@ input {
 	max-width: 1100px;	
 }
 
+.guide-section {
+	margin-left: 10vw;
+	width: 50vw;
+	max-width: 460px;
+	line-height: 1.35;
+}
+
 @media screen and (max-width: 620px) {
-	.welcome, .contact-section {
+	.welcome, .contact-section, .guide-section {
 		margin-left: 0;
 		width: 90vw;
 	}

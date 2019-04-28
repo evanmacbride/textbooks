@@ -294,10 +294,27 @@ $(document).ready(function() {
 	$(".banner").on("click", "#about-btn", function() {
 		$(".dropdown-list").toggle();
 	});
+	
+	$(document).click(function(event) {
+		if(!$(event.target).parent().addBack().is(".dropdown-list") && 
+		!$(event.target).parent().addBack().is("#about-btn")) {
+			$(".dropdown-list").hide();
+		}
+	});
 
 	// Load Contact Page
-	$(".banner").on("click", "#about-btn", function() {
+	$(".banner").on("click", "#contact-page", function() {
 		$(".wrap").load("contact.html", function() {
+			$(".active-page").removeClass("active-page");
+			setTimeout(function() {
+				$("#about-btn").addClass("active-page");
+			},1);				
+		});
+	});
+	
+	// Load Contact Page
+	$(".banner").on("click", "#user-guide-page", function() {
+		$(".wrap").load("user-guide.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#about-btn").addClass("active-page");
