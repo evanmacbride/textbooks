@@ -170,7 +170,7 @@ main {
 }
 
 .active-page:after {
-	content: '';
+	/*content: '';*/
 }
 
 .active-page + .nav-link:before {
