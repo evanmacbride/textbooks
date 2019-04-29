@@ -102,6 +102,9 @@ $(document).ready(function() {
 		// If logged in
 		if (firebaseUser) {
 			console.log(firebaseUser);
+			// Redirect Get Started to Search & Manage
+			$(".welcome-link").removeClass("login-btn");
+			$(".welcome-link").attr("id","search-manage");
 			// Hide login-btn and show logout-btn.
 			$(".logout-btn").show();
 			$(".nav-list .login-btn").hide();
@@ -109,7 +112,9 @@ $(document).ready(function() {
 		// If logged out
 		} else {
 			$(".wrap").load("home.html", function() {
-				$("#search-manage").hide();
+				$(".welcome-link").addClass("login-btn");
+				$(".welcome-link").removeAttr("id");
+				$(".nav-list #search-manage").hide();
 				$(".nav-list .login-btn").show();
 				$(".logout-btn").hide();
 				$(".active-page").removeClass("active-page");
