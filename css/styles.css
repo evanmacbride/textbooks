@@ -301,11 +301,19 @@ input {
 	text-decoration: underline;	
 }
 
-.guide-section, .faq-section {
+.faq-section {
 	margin-left: 10vw;
+}
+
+.guide-section, .faq-section {
 	width: 50vw;
 	max-width: 460px;
 	line-height: 1.35;
+}
+
+.user-guide-content {
+	height: 90vh;
+	width: 90vw;
 }
 
 @media screen and (max-width: 620px) {
