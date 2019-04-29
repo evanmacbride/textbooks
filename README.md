@@ -4,8 +4,6 @@ A Google Firestore demo in the form of a college textbook management system. Tex
 
 # TODO:
 
-Swap placeholder text for real content in User Guide and FAQ.
-
 Provide notice to user when search returns no results.
 
 Put Add New Textbooks and Search Textbooks beside each other (not on top of each other) in desktop mode.
