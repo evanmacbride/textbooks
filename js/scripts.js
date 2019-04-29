@@ -105,9 +105,11 @@ $(document).ready(function() {
 			// Hide login-btn and show logout-btn.
 			$(".logout-btn").show();
 			$(".login-btn").hide();
+			$("#search-manage").show();
 		// If logged out
 		} else {
 			$(".wrap").load("home.html", function() {
+				$("#search-manage").hide();
 				$(".login-btn").show();
 				$(".logout-btn").hide();
 				$(".active-page").removeClass("active-page");
