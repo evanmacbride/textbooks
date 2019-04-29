@@ -173,7 +173,8 @@ main {
 	/*content: '';*/
 }
 
-.active-page + .nav-link:before {
+
+/*.active-page + .nav-link:before {
 	display: inline;
 	color: var(--black);
 	content: "| ";
@@ -181,7 +182,7 @@ main {
 
 #search-manage.active-page + .nav-link:before {
 	content: "|";
-}
+}*/
 
 #mydtcc a {
 	color: inherit !important;
