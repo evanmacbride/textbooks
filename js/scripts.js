@@ -104,13 +104,13 @@ $(document).ready(function() {
 			console.log(firebaseUser);
 			// Hide login-btn and show logout-btn.
 			$(".logout-btn").show();
-			$(".login-btn").hide();
+			$(".nav-list .login-btn").hide();
 			$("#search-manage").show();
 		// If logged out
 		} else {
 			$(".wrap").load("home.html", function() {
 				$("#search-manage").hide();
-				$(".login-btn").show();
+				$(".nav-list .login-btn").show();
 				$(".logout-btn").hide();
 				$(".active-page").removeClass("active-page");
 				setTimeout(function() {
