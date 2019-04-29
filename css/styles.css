@@ -391,10 +391,11 @@ input {
 
 .success-message {
 	/*font-family: 'IBM Plex Mono';*/
+	color: var(--green);
 	font-weight: 700;
 	margin-top: 0.26rem;
 	display: none; /* Default to hidden. Display on successful addition to database. */
-	opacity: 0.82;
+	/*opacity: 0.82;*/
 }
 
 .textbook-entry {
