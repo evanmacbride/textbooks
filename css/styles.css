@@ -27,6 +27,7 @@
 	
 	--brightblue: #116dee;
 	--green: #16af61;
+	--lightgreen: #29e23c;
 	
 	--darkgreen: #0a6d3a;
 	--red: #e3170a;
@@ -407,6 +408,7 @@ input {
 }
 
 select, option {
+	background-color: transparent;
 	font-weight: 500;
 }
 
@@ -521,21 +523,21 @@ input[type=submit]:hover {
 }
 
 @keyframes success-anim {
-	0% {background-color: var(--green);}
+	0% {background-color: var(--lightgreen);}
 	100% {background-color: var(--whitegrey);}
 }
 
 @keyframes success-anim-light {
-	0% {background-color: var(--green);}
+	0% {background-color: var(--lightgreen);}
 	100% {background-color: var(--offwhite);}
 }
 
 .successful {
-	animation: success-anim 0.8s;
+	animation: success-anim 1s;
 }
 
 .recent-textbooks li:nth-child(even).successful {
-	animation: success-anim-light 0.8s;
+	animation: success-anim-light 1s;
 }
 
 .recent-textbook .edit-form, .recent-textbook-header {
@@ -687,7 +689,7 @@ input[type=submit]:hover {
 #function-message {
 	display: none;
 	overflow: visible;
-	opacity: 0.88;
+	/*opacity: 0.88;*/
 }
 
 
