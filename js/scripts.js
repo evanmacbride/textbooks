@@ -297,7 +297,7 @@ $(document).ready(function() {
 	});	
 	
 	// Load Log In page
-	$(".banner").on("click", ".login-btn", function() {
+	$(document).on("click", ".login-btn", function() {
 		$(".wrap").load("login.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
