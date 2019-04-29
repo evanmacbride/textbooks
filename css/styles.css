@@ -339,6 +339,10 @@ input {
 	max-width: 440px;
 }
 
+.q-and-a {
+	margin-bottom: 1.9rem;
+}
+
 .login-entry {
 	display: flex;
 	flex-flow: column wrap;

@@ -8,12 +8,6 @@ Swap placeholder text for real content in User Guide and FAQ.
 
 Provide notice to user when search returns no results.
 
-Add scaling on function button hover.
-
 Put Add New Textbooks and Search Textbooks beside each other (not on top of each other) in desktop mode.
 
 Provide count of search results.
-
-Change the changes saved "flash" color to a yellower green.
-
-
