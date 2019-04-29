@@ -308,7 +308,7 @@ $(document).ready(function() {
 	});
 
 	// Load Home Page
-	$(".banner").on("click", "#home-page", function() {
+	$(document).on("click", "#home-page", function() {
 		$(".wrap").load("home.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
@@ -353,7 +353,7 @@ $(document).ready(function() {
 	
 	// Sign out the user by clicking log-out button.
 	// (Should return user to home page).
-	$(".banner").on("click", ".logout-btn", function() {
+	$(document).on("click", ".logout-btn", function() {
 		auth.signOut();
 		$('html,body').scrollTop(0);
 	});
