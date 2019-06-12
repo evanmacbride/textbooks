@@ -508,6 +508,10 @@ input:checked + .checkmark:after {
 	border: 1px solid var(--blackgrey);
 }
 
+.results-message {
+	display: none;
+}
+
 #logout {
 	font-weight: 500;
 	float: right;

@@ -4,10 +4,10 @@ A Google Firestore demo in the form of a college textbook management system. Tex
 
 # TODO:
 
-Swap placeholder text for real content in User Guide and FAQ.
+Improve comments.
 
-Provide notice to user when search returns no results.
+Create demo mode to showcase UI/UX without having to log in.
 
-Put Add New Textbooks and Search Textbooks beside each other (not on top of each other) in desktop mode.
+Streamline documentation.
 
-Provide count of search results.
+Remove specific school branding from design. Adopt a more neutral look.

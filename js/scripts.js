@@ -49,45 +49,35 @@ $(document).ready(function() {
 			order = db.collection("textbooks").where(queryField, matchType, queryValue);
 		}
 		order.get().then((querySnapshot) => {
-				resultCount = querySnapshot.size;
-				if (resultCount > 0) {
-					querySnapshot.forEach((doc) => {
+			var resultCount = querySnapshot.size;
+			if (resultCount > 0) {
+				querySnapshot.forEach((doc) => {
 					var $recentHtml = $(".recent-textbooks").html();
 					var $textbookId = doc.id;
 					$(".recent-textbooks").html(
-							$recentHtml + "<li class='recent-textbook' data-id='" + 
-							$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
-							doc.data().course + "' last-saved='" + doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
-							doc.data().semester + "' last-saved='" + doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
-							doc.data().lead + "' last-saved='" + doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
-							doc.data().title + "' last-saved='" + doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
-							doc.data().author + "' last-saved='" + doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
-							doc.data().isbn + "' last-saved='" + doc.data().isbn + "'></input><span class='textbook-func'>" +
-							"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
-							"<i class='far fa-save'></i></button>" +					
-							"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
-							"<i class='fas fa-undo-alt'></i></button>" +					
-							"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
-							"<i class='far fa-edit'></i></button>" +
-							"<button type='button' class='delete-textbook' id='" + 
-							$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
-					}
-					$(".textbook-display").css("display","inline-block");
+						$recentHtml + "<li class='recent-textbook' data-id='" + 
+						$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
+						doc.data().course + "' last-saved='" + doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
+						doc.data().semester + "' last-saved='" + doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
+						doc.data().lead + "' last-saved='" + doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
+						doc.data().title + "' last-saved='" + doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
+						doc.data().author + "' last-saved='" + doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+						doc.data().isbn + "' last-saved='" + doc.data().isbn + "'></input><span class='textbook-func'>" +
+						"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
+						"<i class='far fa-save'></i></button>" +					
+						"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
+						"<i class='fas fa-undo-alt'></i></button>" +					
+						"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
+						"<i class='far fa-edit'></i></button>" +
+						"<button type='button' class='delete-textbook' id='" + 
+						$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
 				});
-				// TODO: Fix these errors.
-				} else {
-					$(".textbook-display").html("Your search returned zero results.");
-					$(".no-results-message").css("display","inline-block");
-				}
-				
-				
-		/*}).then(function() {
-			var count = $(".recent-textbooks")[0].children.length;
-			if (count < 1) {
-				$(".textbook-display").html("Your search returned 0 results.");
+				$(".textbook-display").css("display","inline-block");
+			} else {
+				$(".textbook-display").css("display","none");
 			}
-		}).then(function() {
-			$(".textbook-display").css("display","inline-block");*/
+			$(".results-message").css("display","inline-block");
+			$("#result-count").text(resultCount);	
 		});		
 	}
 	
