@@ -1,17 +1,17 @@
 $(document).ready(function() {
 	// Initialize Firebase
 	var config = {
-		apiKey: "AIzaSyAJc9wFNeEZmACO9J5ConY6hOIqxM1aCyI",
-		authDomain: "textbooks-9c0e3.firebaseapp.com",
-		databaseURL: "https://textbooks-9c0e3.firebaseio.com",
-		projectId: "textbooks-9c0e3",
-		storageBucket: "textbooks-9c0e3.appspot.com",
-		messagingSenderId: "715114654330"
+		apiKey: YOUR_API_KEY,
+		authDomain: YOUR_AUTH_DOMAIN,
+		databaseURL: YOUR_DATABASE_URL,
+		projectId: YOUR_PROJECT_ID,
+		storageBucket: YOUR_STORAGE_BUCKET,
+		messagingSenderId: YOUR_MESSAGING_SENDER_ID
 	};
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
 	const auth = firebase.auth();
-		
+
 	// Display all books in a formatted table.
 	function displayAllBooks() {
 		$(".recent-textbooks").html("");
@@ -21,26 +21,26 @@ $(document).ready(function() {
 				var $recentHtml = $(".recent-textbooks").html();
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
-					$recentHtml + "<li class='recent-textbook' data-id='" + 
-					$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
-					doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
-					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
-					doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
-					doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
-					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+					$recentHtml + "<li class='recent-textbook' data-id='" +
+					$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" +
+					doc.data().course + "'></input><input disabled class='textbook-semester' value='" +
+					doc.data().semester + "'></input><input disabled class='textbook-lead' value='" +
+					doc.data().lead + "'></input><input disabled class='textbook-title' value='" +
+					doc.data().title + "'></input><input disabled class='textbook-author' value='" +
+					doc.data().author + "'></input><input disabled class='textbook-isbn' value='" +
 					doc.data().isbn + "'></input><span class='textbook-func'>" +
 					"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
-					"<i class='far fa-save'></i></button>" +					
+					"<i class='far fa-save'></i></button>" +
 					"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
-					"<i class='fas fa-undo-alt'></i></button>" +					
+					"<i class='fas fa-undo-alt'></i></button>" +
 					"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
 					"<i class='far fa-edit'></i></button>" +
-					"<button type='button' class='delete-textbook' id='" + 
+					"<button type='button' class='delete-textbook' id='" +
 					$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
 			});
 		});
 	}
-	
+
 	// Display Search Results in a formatted table. If exact match is requested, omit orderBy().
 	function displaySearchResults(queryField, matchType, queryValue) {
 		$(".recent-textbooks").html("");
@@ -51,25 +51,25 @@ $(document).ready(function() {
 		order.get().then((querySnapshot) => {
 				resultCount = querySnapshot.size;
 				querySnapshot.forEach((doc) => {
-				
+
 				var $recentHtml = $(".recent-textbooks").html();
 				var $textbookId = doc.id;
 				$(".recent-textbooks").html(
-						$recentHtml + "<li class='recent-textbook' data-id='" + 
-						$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" + 
-						doc.data().course + "' last-saved='" + doc.data().course + "'></input><input disabled class='textbook-semester' value='" + 
-						doc.data().semester + "' last-saved='" + doc.data().semester + "'></input><input disabled class='textbook-lead' value='" + 
-						doc.data().lead + "' last-saved='" + doc.data().lead + "'></input><input disabled class='textbook-title' value='" + 
-						doc.data().title + "' last-saved='" + doc.data().title + "'></input><input disabled class='textbook-author' value='" + 
-						doc.data().author + "' last-saved='" + doc.data().author + "'></input><input disabled class='textbook-isbn' value='" + 
+						$recentHtml + "<li class='recent-textbook' data-id='" +
+						$textbookId + "'><form class='edit-form'><input disabled class='textbook-course' value='" +
+						doc.data().course + "' last-saved='" + doc.data().course + "'></input><input disabled class='textbook-semester' value='" +
+						doc.data().semester + "' last-saved='" + doc.data().semester + "'></input><input disabled class='textbook-lead' value='" +
+						doc.data().lead + "' last-saved='" + doc.data().lead + "'></input><input disabled class='textbook-title' value='" +
+						doc.data().title + "' last-saved='" + doc.data().title + "'></input><input disabled class='textbook-author' value='" +
+						doc.data().author + "' last-saved='" + doc.data().author + "'></input><input disabled class='textbook-isbn' value='" +
 						doc.data().isbn + "' last-saved='" + doc.data().isbn + "'></input><span class='textbook-func'>" +
 						"<button type='submit' class='save-edit hideable hidden-btn' title='save edit'>" +
-						"<i class='far fa-save'></i></button>" +					
+						"<i class='far fa-save'></i></button>" +
 						"<button type='button' class='undo-edit hideable hidden-btn' title='undo current edit'>" +
-						"<i class='fas fa-undo-alt'></i></button>" +					
+						"<i class='fas fa-undo-alt'></i></button>" +
 						"<button type='button' class='edit-textbook' title='toggle edit mode'>" +
 						"<i class='far fa-edit'></i></button>" +
-						"<button type='button' class='delete-textbook' id='" + 
+						"<button type='button' class='delete-textbook' id='" +
 						$textbookId + "' title='delete textbook'><i class='far fa-trash-alt'></i></button></span></form></li>");
 			});
 		/*}).then(function() {
@@ -79,9 +79,9 @@ $(document).ready(function() {
 			}
 		}).then(function() {
 			$(".textbook-display").css("display","inline-block");*/
-		});		
+		});
 	}
-	
+
 	// Search for desired database field. Check if exact match requested.
 	$(".wrap").on("submit", ".search-textbooks",function(event) {
 		event.preventDefault();
@@ -92,11 +92,11 @@ $(document).ready(function() {
 			matchType = "==";
 		}
 		$(".textbook-display").css("display","inline-block");
-		displaySearchResults($queryType,matchType,$queryValue);	
-		
+		displaySearchResults($queryType,matchType,$queryValue);
+
 	});
 
-	
+
 	// Check for log-in or log-out.
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		// If logged in
@@ -120,11 +120,11 @@ $(document).ready(function() {
 				$(".active-page").removeClass("active-page");
 				setTimeout(function() {
 					$("#home-page").addClass("active-page");
-				},1);				
+				},1);
 			});
 		}
 	});
-	
+
 	// Log in by submitting login-form. Jump to Search & Manage after
 	// logging in.
 	$(".wrap").on("submit",".login-form",function(event) {
@@ -137,7 +137,7 @@ $(document).ready(function() {
 				$(".active-page").removeClass("active-page");
 				setTimeout(function() {
 					$("#search-manage").addClass("active-page");
-				},1);				
+				},1);
 			});
 		});
 		promise.catch(function(event) {
@@ -148,7 +148,7 @@ $(document).ready(function() {
 		});
 		$(this)[0].reset();
 	});
-	
+
 	// Edit textbooks "in place" (as they appear in search table) by
 	// removing that line's disabled attribute. Use the edit button to
 	// toggle between disabled and enabled. Clicking edit reveals icons
@@ -169,17 +169,17 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
+
 	// Undo current edit by swapping all values with last-saved attribute.
 	// Get the current form then go through inputs iteratively.
-	$(".wrap").on("click", ".undo-edit", function(event) {	
+	$(".wrap").on("click", ".undo-edit", function(event) {
 		$thisForm = $(this).parent().parent();
 		$inputs = $(this).parent().parent().find("input");
 		$inputs.each(function() {
 			$(this).val($(this).attr("last-saved"));
 		});
 	});
-	
+
 	// Save edits in place by clicking save-edit icon.
 	$(".wrap").on("submit", ".edit-form", function(event) {
 		event.preventDefault();
@@ -187,7 +187,7 @@ $(document).ready(function() {
 		// I could do these next 3 lines for each field.
 		/*$formCourse = $(this).find(".textbook-course");
 		var $course = $formCourse.val();
-		$formCourse.attr("last-saved",$formCourse.val());*/		
+		$formCourse.attr("last-saved",$formCourse.val());*/
 		var $course = $(this).find(".textbook-course").val();
 		var $semester = $(this).find(".textbook-semester").val();
 		var $lead = $(this).find(".textbook-lead").val();
@@ -205,7 +205,7 @@ $(document).ready(function() {
 				lead: $lead,
 				title: $title,
 				author: $author,
-				isbn: $ISBN		
+				isbn: $ISBN
 			})
 			.then(function() {
 				$message = $("#function-message");
@@ -276,20 +276,20 @@ $(document).ready(function() {
 		//displayAllBooks();
 		$(this)[0].reset();
 	});
-	
+
 	// Toggle About Dropdown
 	$(".banner").on("click", "#about-btn", function() {
 		$(".dropdown-list").toggle();
 	});
-	
+
 	// Close dropdown if user clicks outside of it
 	$(document).click(function(event) {
-		if(!$(event.target).parent().addBack().is(".dropdown-list") && 
+		if(!$(event.target).parent().addBack().is(".dropdown-list") &&
 		!$(event.target).parent().addBack().is("#about-btn")) {
 			$(".dropdown-list").hide();
 		}
 	});
-	
+
 	// Load Search & Manage page
 	$(document).on("click", "#search-manage", function() {
 		$(".wrap").load("manage.html", function() {
@@ -299,15 +299,15 @@ $(document).ready(function() {
 			},1);
 		});
 		$('html,body').scrollTop(0);
-	});	
-	
+	});
+
 	// Load Log In page
 	$(document).on("click", ".login-btn", function() {
 		$(".wrap").load("login.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$(".login-btn").addClass("active-page");
-			},1);			
+			},1);
 		});
 		$('html,body').scrollTop(0);
 	});
@@ -318,18 +318,18 @@ $(document).ready(function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#home-page").addClass("active-page");
-			},1);				
+			},1);
 		});
 		$('html,body').scrollTop(0);
 	});
-	
+
 	// Load FAQ Page
 	$(document).on("click", "#faq-page", function() {
 		$(".wrap").load("faq.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#about-btn").addClass("active-page");
-			},1);				
+			},1);
 		});
 		$('html,body').scrollTop(0);
 	});
@@ -340,22 +340,22 @@ $(document).ready(function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#about-btn").addClass("active-page");
-			},1);				
+			},1);
 		});
 		$('html,body').scrollTop(0);
 	});
-	
+
 	// Load User Guide Page
 	$(document).on("click", "#user-guide-page", function() {
 		$(".wrap").load("user-guide.html", function() {
 			$(".active-page").removeClass("active-page");
 			setTimeout(function() {
 				$("#about-btn").addClass("active-page");
-			},1);				
+			},1);
 		});
 		$('html,body').scrollTop(0);
 	});
-	
+
 	// Sign out the user by clicking log-out button.
 	// (Should return user to home page).
 	$(document).on("click", ".logout-btn", function() {
